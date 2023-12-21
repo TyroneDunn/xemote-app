@@ -9,16 +9,17 @@ import { OrdersPageComponent } from "../orders/orders-page/orders-page.component
 import { OrderPageComponent } from "../orders/order-page/order-page.component";
 import { InventoryPageComponent } from "../inventory/inventory-page/inventory-page.component";
 import { NotFoundComponent } from "../not-found/not-found.component";
+import { AuthGuard } from "../auth/auth-guard.service";
 
 const routes: Routes = [
    { path: '', component: HomeComponent },
    { path: 'about', component: AboutComponent },
    { path: 'sign-in', component: SignInComponent },
-   { path: 'products', component: ProductsPageComponent },
-   { path: 'products/:id', component: ProductPageComponent },
-   { path: 'orders', component: OrdersPageComponent },
-   { path: 'orders/:id', component: OrderPageComponent },
-   { path: 'inventory', component: InventoryPageComponent },
+   { path: 'products', component: ProductsPageComponent, canActivate: [AuthGuard] },
+   { path: 'products/:id', component: ProductPageComponent, canActivate: [AuthGuard] },
+   { path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard] },
+   { path: 'orders/:id', component: OrderPageComponent, canActivate: [AuthGuard] },
+   { path: 'inventory', component: InventoryPageComponent, canActivate: [AuthGuard] },
    { path: '**', component: NotFoundComponent },
 ];
 
