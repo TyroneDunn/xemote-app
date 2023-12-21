@@ -10,8 +10,8 @@ import { APP_SIGN_IN } from "../../environments/constants";
 export class AuthGuard {
    private authService = inject(AuthService);
    private router = inject(Router);
-   public canActivate = (): Observable<boolean> => {
-      return this.authService.authorized$
+   public canActivate = (): Observable<boolean> =>
+      this.authService.authorized$
       .pipe(
          map(authorized => {
             if (authorized) return true;
@@ -19,5 +19,4 @@ export class AuthGuard {
             return false;
          }),
       );
-   };
 }
