@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpResponse } from "@angular/common/http";
 import { Observable, retry } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+   providedIn: 'root',
 })
 export class HttpService {
    private readonly http = inject(HttpClient);
@@ -12,7 +12,7 @@ export class HttpService {
       withCredentials: true,
       headers: new HttpHeaders()
       .set("Content-Type", "application/json")
-      .set("credentials", "true")
+      .set("credentials", "true"),
    };
 
    public getRequest$<T>(url: string): Observable<HttpResponse<T>> {
