@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AppToolbarComponent } from "../app-toolbar/app-toolbar.component";
 
 @Component({
    selector: 'app-home',
    standalone: true,
-   imports: [ CommonModule ],
+   imports: [ CommonModule, AppToolbarComponent ],
    templateUrl: './home.component.html',
    styleUrls: [ './home.component.scss' ],
 })
