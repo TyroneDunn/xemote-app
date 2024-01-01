@@ -1,0 +1,42 @@
+.mat-toolbar {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
+.mat-toolbar-row, .mat-toolbar-single-row {
+  height: 64px !important;
+}
+
+.app-toolbar {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 150px auto 150px;
+  width: 100%;
+  align-items: center;
+}
+
+// todo : update naming
+.title-toolbar-home-action {
+  display: grid;
+  place-content: center;
+}
+
+.toolbar {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+}
+
+.toolbar-action {
+  margin-left: 2px;
+  margin-right: 6px;
+}
+
+.toolbar-search {
+  .mat-mdc-form-field {
+    height: 50px;
+  }
+}
