@@ -2,7 +2,6 @@
   "name": "xemote-app",
   "version": "0.0.1",
   "scripts": {
-    "ng": "ng",
     "start:prod": "ng serve --ssl --configuration production",
     "start:dev": "ng serve --ssl --configuration development --host 0.0.0.0",
     "build": "ng build",
