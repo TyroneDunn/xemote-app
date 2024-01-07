@@ -4,16 +4,16 @@ import { AppToolbarComponent } from "../app-toolbar/app-toolbar.component";
 import { MatToolbarModule } from "@angular/material/toolbar";
 
 @Component({
-   selector: 'app-home',
+   selector: 'app-home-page',
    standalone: true,
    imports: [
       CommonModule,
       MatToolbarModule,
       AppToolbarComponent,
    ],
-   templateUrl: './home.component.html',
-   styleUrls: [ './home.component.scss' ],
+   templateUrl: './home-page.component.html',
+   styleUrls: [ './home-page.component.scss' ],
 })
-export class HomeComponent {
+export class HomePageComponent {
 
 }
