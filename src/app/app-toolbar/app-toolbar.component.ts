@@ -6,11 +6,17 @@ import { NavigationItemsComponent } from "../navigation-items/navigation-items.c
 import { SocialLinkItemsComponent } from "../social-link-items/social-link-items.component";
 
 @Component({
-   selector: 'app-toolbar',
-   standalone: true,
-   imports: [ CommonModule, MatToolbarModule, HomeActionComponent, NavigationItemsComponent, SocialLinkItemsComponent ],
+   selector   : 'app-toolbar',
+   standalone : true,
+   imports    : [
+      CommonModule,
+      MatToolbarModule,
+      HomeActionComponent,
+      NavigationItemsComponent,
+      SocialLinkItemsComponent
+   ],
    templateUrl: './app-toolbar.component.html',
-   styleUrls: [ './app-toolbar.component.scss' ],
+   styleUrls  : [ './app-toolbar.component.scss' ],
 })
 export class AppToolbarComponent {
 
