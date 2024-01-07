@@ -1,0 +1,10 @@
+.landing-section {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   margin: 3rem;
+
+   .landing-section-content {
+      display: flex;
+      flex-direction: column;
+   }
+}

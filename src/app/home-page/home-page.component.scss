@@ -1,0 +1,14 @@
+.home-page {
+   display: flex;
+   flex-direction: column;
+
+   .home-page-content {
+      display: flex;
+      flex-direction: column;
+      background-color: gray;
+      width: 110rem;
+      margin: auto;
+      margin-top: 5rem;
+      gap: 5rem;
+   }
+}
