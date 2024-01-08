@@ -1,0 +1,21 @@
+.offerings-section {
+   display: flex;
+   flex-direction: column;
+   margin: 3rem;
+   text-align: center;
+
+   .offerings-section-header {
+      display: flex;
+      flex-direction: column;
+   }
+
+   .offerings-section-content {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+   }
+
+   .offerings-card-content {
+      text-align: left;
+   }
+}
