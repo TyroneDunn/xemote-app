@@ -1,0 +1,34 @@
+.footer-section {
+   width: 100%;
+   background-color: lightgrey;
+   display: flex;
+   flex-direction: column;
+   padding: 3rem;
+   gap: 3rem;
+
+   .footer-section-content {
+      background-color: grey;
+      width: 110rem;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+
+
+      .footer-section-meta-description {
+         padding: 2rem;
+         background-color: darkgray;
+      }
+
+      .footer-section-navigation {
+         padding: 2rem;
+      }
+
+      .footer-section-contact {
+         padding: 2rem;
+      }
+   }
+
+   .footer-section-copyright {
+      text-align: center;
+   }
+}

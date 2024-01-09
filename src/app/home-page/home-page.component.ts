@@ -7,6 +7,7 @@ import { OfferingsSectionComponent } from '../offerings-section/offerings-sectio
 import {
    TestimonialsSectionComponent
 } from '../testimonials-section/testimonials-section.component';
+import { FooterSectionComponent } from '../footer-section/footer-section.component';
 
 @Component({
    selector   : 'app-home-page',
@@ -18,6 +19,7 @@ import {
       LandingSectionComponent,
       OfferingsSectionComponent,
       TestimonialsSectionComponent,
+      FooterSectionComponent,
    ],
    templateUrl: './home-page.component.html',
    styleUrls  : [ './home-page.component.scss' ],
