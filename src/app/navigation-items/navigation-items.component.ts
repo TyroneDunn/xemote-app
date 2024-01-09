@@ -1,11 +1,12 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-navigation-items',
   standalone: true,
-   imports: [ CommonModule, RouterLink ],
+   imports: [ CommonModule, RouterLink, MatButtonModule ],
   templateUrl: './navigation-items.component.html',
   styleUrls: ['./navigation-items.component.scss']
 })

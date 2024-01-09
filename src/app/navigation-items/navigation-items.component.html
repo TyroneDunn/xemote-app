@@ -1,11 +1,30 @@
 <div class="navigation-items">
    <span>
-      <a routerLink="/">Home</a>
+      <a
+         mat-flat-button
+         routerLink="/"
+         [disableRipple]="true"
+      >
+         Home
+      </a>
    </span>
    <span>
-      <a routerLink="/about">About</a>
+      <a
+         mat-flat-button
+         routerLink="/about"
+         [disableRipple]="true"
+         [disabled]="true"
+      >
+         About
+      </a>
    </span>
    <span>
-      <a routerLink="/sign-in">Sign In</a>
+      <a
+         mat-flat-button
+         routerLink="/sign-in"
+         [disableRipple]="true"
+      >
+         <p>Sign In</p>
+      </a>
    </span>
 </div>
