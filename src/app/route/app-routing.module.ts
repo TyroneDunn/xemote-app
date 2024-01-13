@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginPage } from "../login-page/login.page";
-import { AboutComponent } from "../about/about.component";
+import { AboutPage } from "../about-page/about.page";
 import { ProductsPageComponent } from "../products/products-page/products-page.component";
 import { ProductPageComponent } from "../products/product-page/product-page.component";
 import { OrdersPageComponent } from "../orders/orders-page/orders-page.component";
@@ -13,7 +13,7 @@ import { HomePage } from '../home-page/home.page';
 
 const routes: Routes = [
    { path: '', component: HomePage },
-   { path: 'about', component: AboutComponent },
+   { path: 'about', component: AboutPage },
    { path: 'login', component: LoginPage },
    { path: 'products', component: ProductsPageComponent, canActivate: [AuthGuard] },
    { path: 'products/:id', component: ProductPageComponent, canActivate: [AuthGuard] },
