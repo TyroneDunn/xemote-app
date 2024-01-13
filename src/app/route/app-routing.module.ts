@@ -7,7 +7,7 @@ import { ProductPageComponent } from "../products/product-page/product-page.comp
 import { OrdersPageComponent } from "../orders/orders-page/orders-page.component";
 import { OrderPageComponent } from "../orders/order-page/order-page.component";
 import { InventoryPageComponent } from "../inventory/inventory-page/inventory-page.component";
-import { NotFoundComponent } from "../not-found/not-found.component";
+import { NotFoundPage } from "../not-found-page/not-found.page";
 import { AuthGuard } from "../auth/auth-guard.service";
 import { HomePage } from '../home-page/home.page';
 
@@ -20,7 +20,7 @@ const routes: Routes = [
    { path: 'orders', component: OrdersPageComponent, canActivate: [AuthGuard] },
    { path: 'orders/:id', component: OrderPageComponent, canActivate: [AuthGuard] },
    { path: 'inventory', component: InventoryPageComponent, canActivate: [AuthGuard] },
-   { path: '**', component: NotFoundComponent },
+   { path: '**', component: NotFoundPage },
 ];
 
 @NgModule({
