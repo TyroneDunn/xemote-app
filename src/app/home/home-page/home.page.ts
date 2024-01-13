@@ -7,7 +7,7 @@ import {
    TestimonialsSection
 } from '../testimonials-section/testimonials.section';
 import { AppToolbarComponent } from '../../app-toolbar/app-toolbar.component';
-import { FooterSectionComponent } from '../../footer-section/footer-section.component';
+import { FooterSection } from '../../footer-section/footer.section';
 
 @Component({
    selector   : 'app-home-page',
@@ -19,7 +19,7 @@ import { FooterSectionComponent } from '../../footer-section/footer-section.comp
       LandingSection,
       OfferingsSection,
       TestimonialsSection,
-      FooterSectionComponent,
+      FooterSection,
    ],
    templateUrl: './home.page.html',
    styleUrls  : [ './home.page.scss' ],
