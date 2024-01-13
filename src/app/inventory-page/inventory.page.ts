@@ -5,9 +5,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-inventory-page',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './inventory-page.component.html',
-  styleUrls: ['./inventory-page.component.scss']
+  templateUrl: './inventory.page.html',
+  styleUrls: ['./inventory.page.scss']
 })
-export class InventoryPageComponent {
+export class InventoryPage {
 
 }
