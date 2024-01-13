@@ -6,7 +6,7 @@ import { OfferingsSection } from '../offerings-section/offerings.section';
 import {
    TestimonialsSection
 } from '../testimonials-section/testimonials.section';
-import { ClientNavigation } from '../app-navigation/client.navigation';
+import { ClientNavigation } from '../client-navigation/client.navigation';
 import { FooterSection } from '../footer-section/footer.section';
 
 @Component({
