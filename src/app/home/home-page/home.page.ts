@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { LandingSectionComponent } from '../landing-section/landing-section.component';
+import { LandingSection } from '../landing-section/landing.section';
 import { OfferingsSectionComponent } from '../offerings-section/offerings-section.component';
 import {
    TestimonialsSectionComponent
@@ -16,7 +16,7 @@ import { FooterSectionComponent } from '../../footer-section/footer-section.comp
       CommonModule,
       MatToolbarModule,
       AppToolbarComponent,
-      LandingSectionComponent,
+      LandingSection,
       OfferingsSectionComponent,
       TestimonialsSectionComponent,
       FooterSectionComponent,

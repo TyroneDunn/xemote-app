@@ -5,9 +5,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-landing-section',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './landing-section.component.html',
-  styleUrls: ['./landing-section.component.scss']
+  templateUrl: './landing.section.html',
+  styleUrls: ['./landing.section.scss']
 })
-export class LandingSectionComponent {
+export class LandingSection {
 
 }
