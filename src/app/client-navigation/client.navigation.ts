@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { NavigationItemsComponent } from "../navigation-items/navigation-items.component";
+import { NavigationLinksComponent } from "../navigation-items/navigation-links.component";
 import { SocialLinksComponent } from "../social-links/social-links.component";
 import { HomeActionComponent } from '../home-action/home-action.component';
 
@@ -12,7 +12,7 @@ import { HomeActionComponent } from '../home-action/home-action.component';
       CommonModule,
       MatToolbarModule,
       HomeActionComponent,
-      NavigationItemsComponent,
+      NavigationLinksComponent,
       SocialLinksComponent
    ],
    templateUrl: './client.navigation.html',
