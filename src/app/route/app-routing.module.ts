@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePage } from '../home/home-page/home.page';
 import { LoginPage } from "../login-page/login.page";
 import { AboutComponent } from "../about/about.component";
 import { ProductsPageComponent } from "../products/products-page/products-page.component";
@@ -10,6 +9,7 @@ import { OrderPageComponent } from "../orders/order-page/order-page.component";
 import { InventoryPageComponent } from "../inventory/inventory-page/inventory-page.component";
 import { NotFoundComponent } from "../not-found/not-found.component";
 import { AuthGuard } from "../auth/auth-guard.service";
+import { HomePage } from '../home-page/home.page';
 
 const routes: Routes = [
    { path: '', component: HomePage },

@@ -6,8 +6,8 @@ import { OfferingsSection } from '../offerings-section/offerings.section';
 import {
    TestimonialsSection
 } from '../testimonials-section/testimonials.section';
-import { AppToolbarComponent } from '../../app-toolbar/app-toolbar.component';
-import { FooterSection } from '../../footer-section/footer.section';
+import { AppToolbarComponent } from '../app-toolbar/app-toolbar.component';
+import { FooterSection } from '../footer-section/footer.section';
 
 @Component({
    selector   : 'app-home-page',
