@@ -5,9 +5,9 @@ import { CommonModule } from '@angular/common';
   selector: 'app-product-page',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './product-page.component.html',
-  styleUrls: ['./product-page.component.scss']
+  templateUrl: './product.page.html',
+  styleUrls: ['./product.page.scss']
 })
-export class ProductPageComponent {
+export class ProductPage {
 
 }
