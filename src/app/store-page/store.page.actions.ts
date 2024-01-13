@@ -17,6 +17,15 @@ export const openAddProductToCartDialog = createAction(
    props<{ productId: string }>()
 );
 
+export const openCheckout = createAction(
+   '[Store Page] Open Checkout'
+);
+
+export const searchProducts = createAction(
+   '[Store Page] Search Products',
+   props<{ query: string }>()
+);
+
 export const filterProductsByCategory = createAction(
    '[Store Page] Filter Products By Category',
    props<{ category: ProductsCategory }>()
