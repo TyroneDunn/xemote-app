@@ -6,7 +6,7 @@ import { OfferingsSection } from '../offerings-section/offerings.section';
 import {
    TestimonialsSection
 } from '../testimonials-section/testimonials.section';
-import { AppToolbarComponent } from '../app-toolbar/app-toolbar.component';
+import { ClientNavigation } from '../app-navigation/client.navigation';
 import { FooterSection } from '../footer-section/footer.section';
 
 @Component({
@@ -15,7 +15,7 @@ import { FooterSection } from '../footer-section/footer.section';
    imports: [
       CommonModule,
       MatToolbarModule,
-      AppToolbarComponent,
+      ClientNavigation,
       LandingSection,
       OfferingsSection,
       TestimonialsSection,
