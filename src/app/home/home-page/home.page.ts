@@ -4,8 +4,8 @@ import { MatToolbarModule } from "@angular/material/toolbar";
 import { LandingSection } from '../landing-section/landing.section';
 import { OfferingsSection } from '../offerings-section/offerings.section';
 import {
-   TestimonialsSectionComponent
-} from '../testimonials-section/testimonials-section.component';
+   TestimonialsSection
+} from '../testimonials-section/testimonials.section';
 import { AppToolbarComponent } from '../../app-toolbar/app-toolbar.component';
 import { FooterSectionComponent } from '../../footer-section/footer-section.component';
 
@@ -18,7 +18,7 @@ import { FooterSectionComponent } from '../../footer-section/footer-section.comp
       AppToolbarComponent,
       LandingSection,
       OfferingsSection,
-      TestimonialsSectionComponent,
+      TestimonialsSection,
       FooterSectionComponent,
    ],
    templateUrl: './home.page.html',

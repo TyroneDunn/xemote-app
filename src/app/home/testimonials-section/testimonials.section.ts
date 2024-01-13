@@ -6,10 +6,10 @@ import { MatCardModule } from '@angular/material/card';
 @Component({
   selector: 'app-testimonials-section',
   standalone: true,
-   imports: [ CommonModule, CarouselModule, MatCardModule ],
-  templateUrl: './testimonials-section.component.html',
-  styleUrls: ['./testimonials-section.component.scss']
+  imports: [ CommonModule, CarouselModule, MatCardModule ],
+  templateUrl: './testimonials.section.html',
+  styleUrls: ['./testimonials.section.scss']
 })
-export class TestimonialsSectionComponent {
+export class TestimonialsSection {
 
 }
