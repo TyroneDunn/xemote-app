@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from "@angular/material/toolbar";
-import { LandingSection } from '../landing-section/landing.section';
+import { HeroSection } from '../hero-section/hero.section';
 import { OfferingsSection } from '../offerings-section/offerings.section';
 import {
    TestimonialsSection
@@ -16,7 +16,7 @@ import { FooterSection } from '../footer-section/footer.section';
       CommonModule,
       MatToolbarModule,
       ClientNavigation,
-      LandingSection,
+      HeroSection,
       OfferingsSection,
       TestimonialsSection,
       FooterSection,

@@ -2,12 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-landing-section',
+  selector: 'app-hero-section',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './landing.section.html',
-  styleUrls: ['./landing.section.scss']
+  templateUrl: './hero.section.html',
+  styleUrls: ['./hero.section.scss']
 })
-export class LandingSection {
+export class HeroSection {
 
 }
