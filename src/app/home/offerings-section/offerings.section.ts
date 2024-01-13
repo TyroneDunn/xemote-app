@@ -6,9 +6,9 @@ import { MatCardModule } from '@angular/material/card';
   selector: 'app-offerings-section',
   standalone: true,
    imports: [ CommonModule, MatCardModule ],
-  templateUrl: './offerings-section.component.html',
-  styleUrls: ['./offerings-section.component.scss']
+  templateUrl: './offerings.section.html',
+  styleUrls: ['./offerings.section.scss']
 })
-export class OfferingsSectionComponent {
+export class OfferingsSection {
 
 }
