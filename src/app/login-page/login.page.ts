@@ -3,12 +3,12 @@ import { CommonModule } from '@angular/common';
 import { MatButtonModule } from '@angular/material/button';
 
 @Component({
-   selector: 'app-sign-in-page',
+   selector: 'app-login-page',
    standalone: true,
    imports: [ CommonModule, MatButtonModule ],
-   templateUrl: './sign-in-page.component.html',
-   styleUrls: [ './sign-in-page.component.scss' ],
+   templateUrl: './login.page.html',
+   styleUrls: [ './login.page.scss' ],
 })
-export class SignInPageComponent {
+export class LoginPage {
 
 }
