@@ -1,0 +1,16 @@
+.store-toolbar {
+   width: 100%;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   align-items: center;
+   margin-left: 1rem;
+   margin-right: 1rem;
+
+   .store-toolbar-search {
+      text-align: center;
+   }
+
+   .store-toolbar-actions {
+      text-align: right;
+   }
+}
