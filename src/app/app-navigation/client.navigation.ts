@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { NavigationItemsComponent } from "../navigation-items/navigation-items.component";
-import { SocialLinkItemsComponent } from "../social-link-items/social-link-items.component";
+import { SocialLinksComponent } from "../social-links/social-links.component";
 import { HomeActionComponent } from '../home-action/home-action.component';
 
 @Component({
@@ -13,7 +13,7 @@ import { HomeActionComponent } from '../home-action/home-action.component';
       MatToolbarModule,
       HomeActionComponent,
       NavigationItemsComponent,
-      SocialLinkItemsComponent
+      SocialLinksComponent
    ],
    templateUrl: './client.navigation.html',
    styleUrls  : [ './client.navigation.scss' ],
