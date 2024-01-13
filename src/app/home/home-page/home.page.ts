@@ -21,9 +21,9 @@ import { FooterSectionComponent } from '../../footer-section/footer-section.comp
       TestimonialsSectionComponent,
       FooterSectionComponent,
    ],
-   templateUrl: './home-page.component.html',
-   styleUrls  : [ './home-page.component.scss' ],
+   templateUrl: './home.page.html',
+   styleUrls  : [ './home.page.scss' ],
 })
-export class HomePageComponent {
+export class HomePage {
 
 }
