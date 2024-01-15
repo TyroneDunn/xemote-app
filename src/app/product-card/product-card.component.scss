@@ -1,0 +1,19 @@
+.product-card {
+
+   .product-image-container {
+
+      .product-image {
+         width: 100%;
+         height: auto;
+      }
+   }
+
+   .product-card-actions {
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      margin-right: 0.5rem;
+      margin-left: 0.5rem;
+      margin-bottom: 0.5rem;
+   }
+}

@@ -22,11 +22,117 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 })
 export class ProductsListComponent {
    public products: Observable<Product[]> = of([
-      {id: "0", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
-      {id: "1", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
-      {id: "2", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
-      {id: "3", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
-      {id: "4", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
-      {id: "5", name: "Gateway", price: {price: 23.10, currency: 'USD'}, category: "Gateway"},
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
+      {
+         id: "0",
+         name: "Gateway",
+         price: {price: 23.10, currency: 'USD'},
+         category: "Gateway",
+         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
+      },
    ]);
 }

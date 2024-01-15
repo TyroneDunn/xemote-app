@@ -1,0 +1,23 @@
+<mat-card class="product-card">
+   <div class="product-image-container">
+      <img
+         class="product-image"
+         alt="{{product.name}} image"
+         [ngSrc]="product.imageUrl"
+         width="400"
+         height="266"
+      />
+   </div>
+   <mat-card-content>
+      <p class="product-name">{{product.name}}</p>
+      <p class="product-price">{{toCurrencySymbol(product.price.currency)}}{{product.price.price}}</p>
+   </mat-card-content>
+   <div class="product-card-actions">
+      <button
+         class="add-product-to-cart"
+         mat-icon-button
+      >
+         <mat-icon>shopping_cart</mat-icon>
+      </button>
+   </div>
+</mat-card>
