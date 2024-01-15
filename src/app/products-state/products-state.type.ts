@@ -1,4 +1,4 @@
-import { Product, ProductsSort } from '../products/products.type';
+import { Product, ProductsSort } from '../product/product.types';
 import { Order } from '../shared/order.type';
 
 export type ProductsState = {

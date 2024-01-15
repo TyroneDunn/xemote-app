@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
-import { Currency, Product } from '../products/products.type';
+import { Currency, Product } from '../product/product.types';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';

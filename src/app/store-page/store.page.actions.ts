@@ -5,7 +5,7 @@ import {
    ProductAvailability,
    ProductCategory,
    ProductsSort,
-} from '../products/products.type';
+} from '../product/product.types';
 
 export const openProductDetail = createAction(
    '[Store Page] Open Product Detail',

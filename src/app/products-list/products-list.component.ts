@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Observable } from 'rxjs';
-import { Product } from '../products/products.type';
+import { Product } from '../product/product.types';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
