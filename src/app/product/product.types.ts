@@ -27,7 +27,7 @@ export type ProductCategory =
    | "Wireless Infrared Beam Sensor"
    | "Wireless 4-30mA Sensor";
 
-export type GetProductsRequest = {
+export type ProductsRequest = {
    filter?: ProductsFilter,
    sort?: ProductsSort,
    page?: Page,
