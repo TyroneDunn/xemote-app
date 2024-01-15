@@ -17,3 +17,10 @@ export type ProductCategory = {};
 export type PriceRange = {}
 export type ProductAvailability = {}
 export type ProductsSort = {}
+
+export type GetProductsResponse = {
+   collection: Product[],
+   count: number,
+   index: number,
+   limit: number,
+};
