@@ -17,3 +17,13 @@ export const selectProductsLoading = createSelector(
    selectProductsState,
    (state) => state.loading
 );
+
+export const selectProductsSort = createSelector(
+   selectProductsState,
+   (state) => state.sort
+);
+
+export const selectProductsOrder = createSelector(
+   selectProductsState,
+   (state) => state.order
+);
