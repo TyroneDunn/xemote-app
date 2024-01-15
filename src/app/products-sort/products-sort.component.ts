@@ -7,11 +7,11 @@ import { MatSelectModule } from '@angular/material/select';
 import { Store } from '@ngrx/store';
 import {
    selectProductsOrder,
-   selectProductsSort,
+   selectProductsSortOption,
 } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { Order } from '../shared/order.type';
-import { ProductSortByOption, productSortByOptions } from '../product/product.types';
+import { ProductsSortByOption, productSortByOptions } from '../product/product.types';
 import { toggleProductsSort } from './products-sort.actions';
 
 @Component({
@@ -28,10 +28,12 @@ import { toggleProductsSort } from './products-sort.actions';
    styleUrls  : [ './products-sort.component.scss' ],
 })
 export class ProductsSortComponent {
-   protected readonly productSortByOptions : ProductSortByOption[] = productSortByOptions;
+   protected readonly productSortByOptions : ProductsSortByOption[] = productSortByOptions;
    private readonly store : Store = inject(Store);
-   protected readonly sortByOption$ : Observable<ProductSortByOption | null> = this.store.select(selectProductsSort);
-   protected readonly orderByOption$ : Observable<Order | null> = this.store.select(selectProductsOrder);
+   protected readonly sortByOption$ : Observable<ProductsSortByOption | undefined> =
+      this.store.select(selectProductsSortOption);
+   protected readonly orderByOption$ : Observable<Order | undefined> =
+      this.store.select(selectProductsOrder);
 
    protected orderByIcon(orderBy : "asc" | "desc" | null) : string {
       switch (orderBy) {
@@ -41,7 +43,7 @@ export class ProductsSortComponent {
       }
    }
 
-   protected toggleSortBy(sortByOption : ProductSortByOption) : void {
+   protected toggleSortBy(sortByOption : ProductsSortByOption) : void {
       this.store.dispatch(toggleProductsSort({ sortByOption: sortByOption }));
    }
 }

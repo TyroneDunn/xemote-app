@@ -18,12 +18,12 @@ export const selectProductsLoading = createSelector(
    (state) => state.loading
 );
 
-export const selectProductsSort = createSelector(
+export const selectProductsSortOption = createSelector(
    selectProductsState,
-   (state) => state.sort
+   (state) => state.sort?.field
 );
 
 export const selectProductsOrder = createSelector(
    selectProductsState,
-   (state) => state.order
+   (state) => state.sort?.order
 );

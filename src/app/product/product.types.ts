@@ -1,3 +1,7 @@
+import { Page } from '../page/page.type';
+import { Order } from '../shared/order.type';
+import { NumberRange } from '../shared/number-range.type';
+
 export type Product = {
    id: string,
    name: string,
@@ -13,10 +17,32 @@ export type Price = {
 
 export type Currency = "ZAR" | "USD";
 
-export type ProductCategory = {};
-export type PriceRange = {}
-export type ProductAvailability = {}
-export type ProductsSort = {}
+export type ProductCategory =
+   | "Xemote Gateway"
+   | "Xemote Accessory"
+   | "Wireless Temperature Sensor"
+   | "Wireless Humidity Sensor"
+   | "Wireless AC Current Meter"
+   | "Wireless Event-Based Sensor"
+   | "Wireless Infrared Beam Sensor"
+   | "Wireless 4-30mA Sensor";
+
+export type GetProductsRequest = {
+   filter: ProductsFilter,
+   sort: ProductsSort,
+   page: Page,
+};
+
+export type ProductsFilter = {
+   nameRegex? : string,
+   category? : ProductCategory,
+   priceRange?: NumberRange,
+};
+
+export type ProductsSort = {
+   field: ProductsSortByOption,
+   order: Order,
+};
 
 export type GetProductsResponse = {
    collection: Product[],
@@ -25,12 +51,12 @@ export type GetProductsResponse = {
    limit: number,
 };
 
-export type ProductSortByOption =
+export type ProductsSortByOption =
    | "Name"
    | "Price"
    | "Category";
 
-export const productSortByOptions : ProductSortByOption[] = [
+export const productSortByOptions : ProductsSortByOption[] = [
    "Name",
    "Price",
    "Category",
