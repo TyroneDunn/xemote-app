@@ -8,8 +8,10 @@ export type Product = {
 
 export type Price = {
   price: number,
-  currency: "ZAR" | "USD",
+  currency: Currency,
 };
+
+export type Currency = "ZAR" | "USD";
 
 export type ProductCategory = {};
 export type PriceRange = {}
