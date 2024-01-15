@@ -5,15 +5,15 @@ import { loadProductsSuccess } from '../products-api/products-api.actions';
 
 const initialState: ProductsState = {
    collection: [],
+   count: 0,
    loading: null,
    selectedProduct: null,
-   query: null,
-   filters: [],
-   sort: "Name",
-   order: "asc",
-   count: null,
-   index: null,
-   limit: null,
+   filter: null,
+   sort: {
+      field: "Name",
+      order: "asc"
+   },
+   page: null,
 };
 
 export const productsReducer: ActionReducer<ProductsState> = createReducer(
