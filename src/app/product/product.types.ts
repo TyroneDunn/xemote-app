@@ -24,3 +24,14 @@ export type GetProductsResponse = {
    index: number,
    limit: number,
 };
+
+export type ProductSortByOption =
+   | "Name"
+   | "Price"
+   | "Category";
+
+export const productSortByOptions : ProductSortByOption[] = [
+   "Name",
+   "Price",
+   "Category",
+];
