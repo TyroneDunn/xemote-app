@@ -1,4 +1,4 @@
-import { Action, ActionReducer, createReducer } from '@ngrx/store';
+import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { ProductsState } from './products-state.type';
 import { loadProductsSuccess } from '../products-api/products-api.actions';
 
@@ -15,7 +15,7 @@ const initialState: ProductsState = {
    limit: null,
 };
 
-export const productsReducer: ActionReducer<ProductsState, Action> = createReducer(
+export const productsReducer: ActionReducer<ProductsState> = createReducer(
    initialState,
    on(loadProductsSuccess, (state, action) => ({
       ...state,
