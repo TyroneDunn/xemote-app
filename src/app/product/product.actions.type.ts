@@ -1,5 +1,8 @@
-import { createAction } from '@ngrx/store';
+import { createAction, props } from '@ngrx/store';
+import { GetProductsRequest } from './product.types';
 
 export const loadProducts = createAction(
-   '[Product] Load Products'
+   '[Product] Load Products',
+   props<{ getProductsRequest : GetProductsRequest }>()
 );
+
