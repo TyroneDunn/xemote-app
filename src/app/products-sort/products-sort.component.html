@@ -1,0 +1,20 @@
+<div class="sort-by-container">
+   <span>
+      <p>Sort By:</p>
+   </span>
+   <span>
+      <mat-form-field appearance="outline">
+         <div class="sort-by-form-container">
+            <mat-icon>home</mat-icon>
+            <mat-select hideSingleSelectionIndicator="true">
+               <mat-option
+                  [value]="sortByOption"
+                  *ngFor="let sortByOption of sortByOptions"
+               >
+                  {{sortByOption}}
+               </mat-option>
+            </mat-select>
+         </div>
+      </mat-form-field>
+   </span>
+</div>

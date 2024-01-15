@@ -12,6 +12,7 @@ import {
    selectProductsLoading,
 } from '../products-state/products-state.selectors';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { ProductsSortComponent } from '../products-sort/products-sort.component';
 
 @Component({
   selector: 'app-products-list',
@@ -23,6 +24,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
       MatButtonModule,
       MatPaginatorModule,
       MatProgressSpinnerModule,
+      ProductsSortComponent,
    ],
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.scss']
