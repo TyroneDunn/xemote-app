@@ -1,15 +1,16 @@
-import { Product, ProductSortByOption, ProductsSort } from '../product/product.types';
-import { Order } from '../shared/order.type';
+import {
+   Product,
+   ProductsFilter,
+   ProductsSort,
+} from '../product/product.types';
+import { Page } from '../page/page.type';
 
 export type ProductsState = {
    collection : Product[],
-   loading: boolean | null,
+   count : number,
+   loading : boolean | null,
    selectedProduct : Product | null,
-   query : string | null,
-   filters : ProductsSort[];
-   sort : ProductSortByOption | null,
-   order : Order | null,
-   count : number | null,
-   index : number | null,
-   limit : number | null,
+   filter : ProductsFilter | null,
+   sort : ProductsSort | null;
+   page : Page | null
 };
