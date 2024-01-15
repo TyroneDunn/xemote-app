@@ -12,3 +12,8 @@ export const selectProductsCollection = createSelector(
    selectProductsState,
    (state) => state.collection
 );
+
+export const selectProductsLoading = createSelector(
+   selectProductsState,
+   (state) => state.loading
+);
