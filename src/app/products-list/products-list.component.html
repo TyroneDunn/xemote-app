@@ -1,5 +1,16 @@
-<div class="products-list">
-   <div class="products-queries">
+<div class="products-list-container">
+   <div
+      class="loading-indicator"
+      *ngIf="(productsLoading | async) !== false"
+   >
+      <span></span>
+      <mat-progress-spinner mode="indeterminate"/>
+      <span></span>
+   </div>
+   <div
+      class="products-queries"
+      *ngIf="(productsLoading | async) === false"
+   >
       <div class="query-and-sort">
          <span><h3>1-20 of 138 results for "Xemote"</h3></span>
          <span class="sort-by"><p>Sort By:</p></span>
@@ -12,11 +23,14 @@
          </mat-chip-listbox>
       </div>
    </div>
-   <div class="products">
+   <div
+      class="products-list"
+      *ngIf="(productsLoading | async) === false"
+   >
       <app-product-card
          *ngFor="let product of (products | async)"
          [product]="product"
       />
    </div>
-   <mat-paginator/>
+   <mat-paginator *ngIf="(productsLoading | async) === false"/>
 </div>

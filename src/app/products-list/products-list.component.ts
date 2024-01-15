@@ -7,7 +7,11 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { Store } from '@ngrx/store';
-import { selectProductsCollection } from '../products-state/products-state.selectors';
+import {
+   selectProductsCollection,
+   selectProductsLoading,
+} from '../products-state/products-state.selectors';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @Component({
   selector: 'app-products-list',
@@ -17,7 +21,8 @@ import { selectProductsCollection } from '../products-state/products-state.selec
       ProductCardComponent,
       MatChipsModule,
       MatButtonModule,
-      MatPaginatorModule
+      MatPaginatorModule,
+      MatProgressSpinnerModule,
    ],
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.scss']
@@ -25,4 +30,5 @@ import { selectProductsCollection } from '../products-state/products-state.selec
 export class ProductsListComponent {
    private store: Store = inject(Store);
    public products: Observable<Product[]> = this.store.select(selectProductsCollection);
+   public productsLoading: Observable<boolean | null> = this.store.select(selectProductsLoading);
 }
