@@ -3,7 +3,7 @@ import { Page } from '../page/page.type';
 import {
    PriceRange,
    ProductsAvailability,
-   ProductsCategory,
+   ProductCategory,
    ProductsSort,
 } from '../products/products.type';
 
@@ -28,7 +28,7 @@ export const searchProducts = createAction(
 
 export const filterProductsByCategory = createAction(
    '[Store Page] Filter Products By Category',
-   props<{ category: ProductsCategory }>()
+   props<{ category: ProductCategory }>()
 );
 
 export const filterProductsByPriceRange = createAction(

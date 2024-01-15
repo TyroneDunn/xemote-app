@@ -10,10 +10,12 @@ import { InventoryPage } from "../inventory-page/inventory.page";
 import { NotFoundPage } from "../not-found-page/not-found.page";
 import { AuthGuard } from "../auth/auth-guard.service";
 import { HomePage } from '../home-page/home.page';
+import { StorePage } from '../store-page/store.page';
 
 const routes: Routes = [
    { path: '', component: HomePage },
    { path: 'about', component: AboutPage },
+   { path: 'store', component: StorePage },
    { path: 'login', component: LoginPage },
    { path: 'products', component: ProductsPageComponent, canActivate: [AuthGuard] },
    { path: 'products/:id', component: ProductPageComponent, canActivate: [AuthGuard] },

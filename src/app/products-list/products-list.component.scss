@@ -1,0 +1,15 @@
+.products-queries {
+
+   .query-and-sort {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+   }
+}
+
+.products {
+   display: grid;
+   grid-template-columns: repeat(4, 1fr);
+   gap: 1rem;
+}
