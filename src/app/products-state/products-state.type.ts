@@ -3,6 +3,7 @@ import { Order } from '../shared/order.type';
 
 export type ProductsState = {
    collection : Product[],
+   loading: boolean | null,
    selectedProduct : Product | null,
    query : string | null,
    filters : ProductsSort[];

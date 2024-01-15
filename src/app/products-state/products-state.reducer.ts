@@ -3,6 +3,7 @@ import { ProductsState } from './products-state.type';
 
 const initialState: ProductsState = {
    collection: [],
+   loading: null,
    selectedProduct: null,
    query: null,
    filters: [],
