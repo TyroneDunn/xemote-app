@@ -8,6 +8,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from "@angular/common/http";
+import { ProductsStateModule } from './products-state/products-state.module';
 
 @NgModule({
    declarations: [
@@ -22,6 +23,7 @@ import { HttpClientModule } from "@angular/common/http";
       EffectsModule.forRoot([]),
       StoreRouterConnectingModule.forRoot(),
       StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: !isDevMode() }),
+      ProductsStateModule,
    ],
    providers: [],
    bootstrap: [ AppComponent ],
