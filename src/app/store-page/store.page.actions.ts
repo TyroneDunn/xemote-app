@@ -1,6 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { Page } from '../page/page.type';
 import { ProductCategory } from '../product/product.types';
+import { Page } from '../shared/page.type';
 
 export const enterStorePage = createAction(
    '[Store Page] Open Store Page'

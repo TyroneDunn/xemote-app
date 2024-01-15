@@ -3,7 +3,7 @@ import {
    ProductsFilter,
    ProductsSort,
 } from '../product/product.types';
-import { Page } from '../page/page.type';
+import { Page } from '../shared/page.type';
 
 export type ProductsState = {
    collection : Product[],

@@ -1,6 +1,6 @@
-import { Page } from '../page/page.type';
 import { Order } from '../shared/order.type';
 import { NumberRange } from '../shared/number-range.type';
+import { Page } from '../shared/page.type';
 
 export type Product = {
    id: string,
