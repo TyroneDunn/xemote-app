@@ -10,7 +10,13 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 @Component({
   selector: 'app-products-list',
   standalone: true,
-   imports: [ CommonModule, ProductCardComponent, MatChipsModule, MatButtonModule, MatPaginatorModule ],
+   imports: [
+      CommonModule,
+      ProductCardComponent,
+      MatChipsModule,
+      MatButtonModule,
+      MatPaginatorModule
+   ],
   templateUrl: './products-list.component.html',
   styleUrls: ['./products-list.component.scss']
 })
