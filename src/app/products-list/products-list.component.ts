@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Product } from '../products/products.type';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { Store } from '@ngrx/store';
+import { selectProductsCollection } from '../products-state/products-state.selectors';
 
 @Component({
   selector: 'app-products-list',
@@ -21,118 +23,6 @@ import { MatPaginatorModule } from '@angular/material/paginator';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent {
-   public products: Observable<Product[]> = of([
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-      {
-         id: "0",
-         name: "Gateway",
-         price: {price: 23.10, currency: 'USD'},
-         category: "Gateway",
-         imageUrl: "https://xemoteiot.co.za/wp-content/uploads/2022/02/TH-Amphenol-XWEB2.png"
-      },
-   ]);
+   private store: Store = inject(Store);
+   public products: Observable<Product[]> = this.store.select(selectProductsCollection);
 }
