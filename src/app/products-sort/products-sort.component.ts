@@ -42,6 +42,6 @@ export class ProductsSortComponent {
    }
 
    protected toggleSortBy(sortByOption : ProductSortByOption) : void {
-      this.store.dispatch(toggleProductsSort({ sortOption: sortByOption }));
+      this.store.dispatch(toggleProductsSort({ sortByOption: sortByOption }));
    }
 }
