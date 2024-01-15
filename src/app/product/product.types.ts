@@ -28,9 +28,9 @@ export type ProductCategory =
    | "Wireless 4-30mA Sensor";
 
 export type GetProductsRequest = {
-   filter: ProductsFilter,
-   sort: ProductsSort,
-   page: Page,
+   filter?: ProductsFilter,
+   sort?: ProductsSort,
+   page?: Page,
 };
 
 export type ProductsFilter = {
