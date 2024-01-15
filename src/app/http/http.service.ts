@@ -15,27 +15,19 @@ export class HttpService {
       .set("credentials", "true"),
    };
 
-   public getRequest$<T>(url: string): Observable<HttpResponse<T>> {
-      return this.http.get<T>(url, this.options).pipe(
-         retry(2),
-      );
-   }
+   public getRequest$ = <T>(url: string) : Observable<HttpResponse<T>> =>
+      this.http.get<T>(url, this.options)
+      .pipe(retry(2));
 
-   public postRequest$(url: string, payload: object): Observable<HttpResponse<object>> {
-      return this.http.post(url, payload, this.options).pipe(
-         retry(2),
-      );
-   }
+   public postRequest$ = (url: string, payload: object) : Observable<HttpResponse<object>> =>
+      this.http.post(url, payload, this.options)
+      .pipe(retry(2));
 
-   public deleteRequest$(url: string): Observable<HttpResponse<object>> {
-      return this.http.delete(url, this.options).pipe(
-         retry(2),
-      );
-   }
+   public deleteRequest$ = (url: string) : Observable<HttpResponse<object>> =>
+      this.http.delete(url, this.options)
+      .pipe(retry(2));
 
-   public patchRequest$<T>(url: string, payload: object): Observable<HttpResponse<T>> {
-      return this.http.patch<T>(url, payload, this.options).pipe(
-         retry(2),
-      );
-   }
+   public patchRequest$ = <T>(url: string, payload: object) : Observable<HttpResponse<T>> =>
+      this.http.patch<T>(url, payload, this.options)
+      .pipe(retry(2));
 }
