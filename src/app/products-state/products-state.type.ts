@@ -1,4 +1,4 @@
-import { Product, ProductsSort } from '../product/product.types';
+import { Product, ProductSortByOption, ProductsSort } from '../product/product.types';
 import { Order } from '../shared/order.type';
 
 export type ProductsState = {
@@ -7,7 +7,7 @@ export type ProductsState = {
    selectedProduct : Product | null,
    query : string | null,
    filters : ProductsSort[];
-   sort : ProductsSort | null,
+   sort : ProductSortByOption | null,
    order : Order | null,
    count : number | null,
    index : number | null,
