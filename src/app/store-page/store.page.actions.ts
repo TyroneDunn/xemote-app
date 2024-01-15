@@ -33,11 +33,6 @@ export const filterProductsByCategory = createAction(
    props<{ category: ProductCategory }>()
 );
 
-export const sortProducts = createAction(
-   '[Store Page] Sort Products',
-   props<{ sort: ProductsSort }>()
-);
-
 export const pageProducts = createAction(
    '[Store Page] Page Products',
    props<{ page: Page }>()
