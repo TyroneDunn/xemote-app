@@ -8,10 +8,10 @@
             <mat-icon>{{orderByIcon((sort$ | async)?.order)}}</mat-icon>
             <mat-select
                hideSingleSelectionIndicator="true"
-               value="{{(sort$ | async)?.field}}"
+               [value]="(sort$ | async)?.field"
             >
                <mat-option
-                  [value]="(sort$ | async)?.field"
+                  [value]="sortByOption"
                   *ngFor="let sortByOption of productSortByOptions"
                   (click)="toggleSortBy(sortByOption)"
                >

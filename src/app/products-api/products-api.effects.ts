@@ -17,11 +17,14 @@ export class ProductsApiEffects {
          ofType(
             loadProducts,
          ),
-         switchMap(() =>
-            this.productsApi.getProducts$({})
+         switchMap((action) =>
+            this.productsApi.getProducts$(action.getProductsRequest)
             .pipe(
                map((response) =>
-                  loadProductsSuccess({ response: response }),
+                  loadProductsSuccess({
+                     request: action.getProductsRequest,
+                     response: response
+                  }),
                ),
                // todo : implement failure case
                // catchError()

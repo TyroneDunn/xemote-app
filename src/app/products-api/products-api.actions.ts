@@ -1,10 +1,16 @@
 import { createAction, props } from '@ngrx/store';
 
-import { GetProductsResponse } from '../product/product.types';
+import {
+   GetProductsResponse,
+   ProductsRequest as GetProductsRequest,
+} from '../product/product.types';
 
 export const loadProductsSuccess = createAction(
    '[Products API] Load Products Success',
-   props<{response: GetProductsResponse}>()
+   props<{
+      request: GetProductsRequest,
+      response: GetProductsResponse
+   }>()
 );
 
 export const loadProductsFailure = createAction(

@@ -25,6 +25,7 @@ export const productsReducer: ActionReducer<ProductsState> = createReducer(
    on(loadProductsSuccess, (state, action) => ({
       ...state,
       loading: false,
+      ...action.request,
       collection: action.response.collection,
       count: action.response.count,
       index: action.response.index,
