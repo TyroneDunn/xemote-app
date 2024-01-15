@@ -5,13 +5,13 @@
    <span>
       <mat-form-field appearance="outline">
          <div class="sort-by-form-container">
-            <mat-icon>{{orderByIcon(orderByOption$ | async)}}</mat-icon>
+            <mat-icon>{{orderByIcon((sort$ | async)?.order)}}</mat-icon>
             <mat-select
                hideSingleSelectionIndicator="true"
-               value="{{sortByOption$ | async}}"
+               value="{{(sort$ | async)?.field}}"
             >
                <mat-option
-                  [value]="(sortByOption$ | async)"
+                  [value]="(sort$ | async)?.field"
                   *ngFor="let sortByOption of productSortByOptions"
                   (click)="toggleSortBy(sortByOption)"
                >

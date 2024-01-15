@@ -5,13 +5,10 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { Store } from '@ngrx/store';
-import {
-   selectProductsOrder,
-   selectProductsSortOption,
-} from '../products-state/products-state.selectors';
+import { selectProductsSort } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { Order } from '../shared/order.type';
-import { ProductsSortByOption, productSortByOptions } from '../product/product.types';
+import { ProductsSortByOption, productSortByOptions, ProductsSort } from '../product/product.types';
 import { toggleProductsSort } from './products-sort.actions';
 
 @Component({
@@ -30,12 +27,10 @@ import { toggleProductsSort } from './products-sort.actions';
 export class ProductsSortComponent {
    protected readonly productSortByOptions : ProductsSortByOption[] = productSortByOptions;
    private readonly store : Store = inject(Store);
-   protected readonly sortByOption$ : Observable<ProductsSortByOption | undefined> =
-      this.store.select(selectProductsSortOption);
-   protected readonly orderByOption$ : Observable<Order | undefined> =
-      this.store.select(selectProductsOrder);
+   protected readonly sort$ : Observable<ProductsSort | undefined> =
+      this.store.select(selectProductsSort);
 
-   protected orderByIcon(orderBy : "asc" | "desc" | null) : string {
+   protected orderByIcon(orderBy : Order | undefined) : string {
       switch (orderBy) {
          case "asc": return "vertical_align_bottom";
          case "desc": return "vertical_align_top";
