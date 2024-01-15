@@ -15,5 +15,5 @@ export type Currency = "ZAR" | "USD";
 
 export type ProductCategory = {};
 export type PriceRange = {}
-export type ProductsAvailability = {}
+export type ProductAvailability = {}
 export type ProductsSort = {}

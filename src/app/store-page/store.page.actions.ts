@@ -2,7 +2,7 @@ import { createAction, props } from '@ngrx/store';
 import { Page } from '../page/page.type';
 import {
    PriceRange,
-   ProductsAvailability,
+   ProductAvailability,
    ProductCategory,
    ProductsSort,
 } from '../products/products.type';
@@ -38,7 +38,7 @@ export const filterProductsByPriceRange = createAction(
 
 export const filterProductsByAvailability = createAction(
    '[Store Page] Filter Products By Availability',
-   props<{ availability: ProductsAvailability }>()
+   props<{ availability: ProductAvailability }>()
 );
 
 export const sortProducts = createAction(
