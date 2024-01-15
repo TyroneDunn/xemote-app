@@ -7,6 +7,7 @@ import { ProductsFiltersComponent } from '../products-filters/products-filters.c
 import { ProductsListComponent } from '../products-list/products-list.component';
 import { SearchComponent } from '../search/search.component';
 import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component';
+import { enterStorePage } from './store.page.actions';
 
 @Component({
   selector: 'app-store-page',
@@ -26,4 +27,7 @@ import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component'
 export class StorePage {
    private store: Store = inject(Store);
 
+   public ngOnInit() : void {
+      this.store.dispatch(enterStorePage());
+   }
 }

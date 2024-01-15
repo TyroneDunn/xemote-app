@@ -7,6 +7,10 @@ import {
    ProductsSort,
 } from '../product/product.types';
 
+export const enterStorePage = createAction(
+   '[Store Page] Open Store Page'
+);
+
 export const openProductDetail = createAction(
    '[Store Page] Open Product Detail',
    props<{ productId: string }>()
