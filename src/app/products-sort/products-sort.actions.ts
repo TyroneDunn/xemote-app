@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
 import { ProductSortByOption } from '../product/product.types';
 
-export const toggleSort = createAction(
-   '[Products Sort] Toggle Sort',
+export const toggleProductsSort = createAction(
+   '[Products Sort] Toggle Products Sort',
    props<{ sortOption: ProductSortByOption }>()
 );

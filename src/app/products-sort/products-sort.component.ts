@@ -12,7 +12,7 @@ import {
 import { Observable } from 'rxjs';
 import { Order } from '../shared/order.type';
 import { ProductSortByOption, productSortByOptions } from '../product/product.types';
-import { toggleSort } from './products-sort.actions';
+import { toggleProductsSort } from './products-sort.actions';
 
 @Component({
    selector   : 'app-products-sort',
@@ -42,6 +42,6 @@ export class ProductsSortComponent {
    }
 
    protected toggleSortBy(sortByOption : ProductSortByOption) : void {
-      this.store.dispatch(toggleSort({ sortOption: sortByOption }));
+      this.store.dispatch(toggleProductsSort({ sortOption: sortByOption }));
    }
 }
