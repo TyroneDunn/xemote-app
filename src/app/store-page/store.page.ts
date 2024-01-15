@@ -11,7 +11,15 @@ import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component'
 @Component({
   selector: 'app-store-page',
   standalone: true,
-   imports: [ CommonModule, ClientNavigation, FooterSection, ProductsFiltersComponent, ProductsListComponent, SearchComponent, StoreToolbarComponent ],
+   imports: [
+      CommonModule,
+      ClientNavigation,
+      FooterSection,
+      ProductsFiltersComponent,
+      ProductsListComponent,
+      SearchComponent,
+      StoreToolbarComponent
+   ],
   templateUrl: './store.page.html',
   styleUrls: ['./store.page.scss']
 })
