@@ -1,13 +1,5 @@
 <div class="products-list-container">
    <div
-      class="loading-indicator"
-      *ngIf="(productsLoading | async) !== false"
-   >
-      <span></span>
-      <mat-progress-spinner mode="indeterminate"/>
-      <span></span>
-   </div>
-   <div
       class="products-queries"
    >
       <div class="query-and-sort">
@@ -21,6 +13,14 @@
             <mat-chip-option>Sit Amet <button>x</button></mat-chip-option>
          </mat-chip-listbox>
       </div>
+   </div>
+   <div
+      class="loading-indicator"
+      *ngIf="(productsLoading | async) !== false"
+   >
+      <span></span>
+      <mat-progress-spinner mode="indeterminate"/>
+      <span></span>
    </div>
    <div
       class="products-list"
