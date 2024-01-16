@@ -12,6 +12,7 @@
             <mat-checkbox
                *ngFor="let category of productCategoryOptions"
                (change)="filterByCategory(category, $event.checked)"
+               [checked]="(activeCategoryFilters$ | async)?.includes(category) || false"
             >
                {{category}}
             </mat-checkbox>

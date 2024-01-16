@@ -47,3 +47,8 @@ export const selectProductsQueryParams = createSelector(
       ...sort && { sort: sort },
       ...page && { page: page },
    }));
+
+export const selectProductsCategoryFilters = createSelector(
+   selectProductsFilter,
+   (filter) => filter?.category
+);
