@@ -8,7 +8,10 @@ import { MatSliderModule } from '@angular/material/slider';
 import { ProductCategory } from '../product/product.types';
 import { Store } from '@ngrx/store';
 import { addProductCategoryFilter } from './products-filters-card.actions';
-import { selectProductsCategoryFilters } from '../products-state/products-state.selectors';
+import {
+   selectProductsCategoryFilters,
+   selectProductsLoading,
+} from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -29,6 +32,8 @@ export class ProductsFiltersCardComponent {
    private store: Store = inject(Store);
    protected activeCategoryFilters$: Observable<ProductCategory[] | undefined> =
       this.store.select(selectProductsCategoryFilters);
+   protected productsLoading$: Observable<boolean | null> =
+      this.store.select(selectProductsLoading);
 
    public readonly productCategoryOptions : ProductCategory[] = [
       "Xemote Gateway",
