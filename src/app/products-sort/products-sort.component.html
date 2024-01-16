@@ -1,4 +1,7 @@
-<div class="sort-by-container">
+<div
+   class="sort-by-container"
+   *ngIf="(sort$ | async) !== undefined"
+>
    <span>
       <p>Sort By:</p>
    </span>
