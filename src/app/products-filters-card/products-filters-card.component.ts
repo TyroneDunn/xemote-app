@@ -5,14 +5,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatSliderModule } from '@angular/material/slider';
-import { ProductCategory } from '../product/product.types';
+import { ProductCategoriesFilters } from '../product/product.types';
 import { Store } from '@ngrx/store';
-import { addProductCategoryFilter } from './products-filters-card.actions';
-import {
-   selectProductsCategoryFilters,
-   selectProductsLoading,
-} from '../products-state/products-state.selectors';
+import { filterProductsByCategories } from './products-filters-card.actions';
+import { selectProductsCategoryFilters } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-products-filters-card',
@@ -23,33 +21,43 @@ import { Observable } from 'rxjs';
       MatCardModule,
       MatDividerModule,
       MatCheckboxModule,
-      MatSliderModule
+      MatSliderModule,
+      FormsModule,
+      ReactiveFormsModule,
    ],
   templateUrl: './products-filters-card.component.html',
   styleUrls: ['./products-filters-card.component.scss']
 })
 export class ProductsFiltersCardComponent {
+   private formBuilder = inject(FormBuilder);
    private store: Store = inject(Store);
-   protected activeCategoryFilters$: Observable<ProductCategory[] | undefined> =
+   protected activeCategoryFilters$: Observable<ProductCategoriesFilters | undefined> =
       this.store.select(selectProductsCategoryFilters);
-   protected productsLoading$: Observable<boolean | null> =
-      this.store.select(selectProductsLoading);
+   protected categoriesFilterForm = this.formBuilder.group({
+      "Xemote Gateway" : false,
+      "Xemote Accessory" : false,
+      "Wireless Temperature Sensor" : false,
+      "Wireless Humidity Sensor" : false,
+      "Wireless AC Current Meter" : false,
+      "Wireless Event-Based Sensor" : false,
+      "Wireless Infrared Beam Sensor" : false,
+      "Wireless 4-30mA Sensor" : false,
+   });
 
-   public readonly productCategoryOptions : ProductCategory[] = [
-      "Xemote Gateway",
-      "Xemote Accessory",
-      "Wireless Temperature Sensor",
-      "Wireless Humidity Sensor",
-      "Wireless AC Current Meter",
-      "Wireless Event-Based Sensor",
-      "Wireless Infrared Beam Sensor",
-      "Wireless 4-30mA Sensor",
-   ];
-
-   public filterByCategory(category : ProductCategory, checked : boolean) : void {
-      this.store.dispatch(addProductCategoryFilter({categoryFilter: {
-            productCategory: category,
-            active: checked
-         }}));
-   }
+   protected filterProductsByCategory() : void {
+      this.store.dispatch(filterProductsByCategories({
+         categoriesFilters: mapFormToProductCategoriesFilters(this.categoriesFilterForm)
+      }));
+   };
 }
+
+const mapFormToProductCategoriesFilters = (categoriesFilterForm : FormGroup) : ProductCategoriesFilters => ({
+   'Xemote Gateway'               : categoriesFilterForm.get('Xemote Gateway')?.value as boolean,
+   'Xemote Accessory'             : categoriesFilterForm.get('Xemote Accessory')?.value as boolean,
+   'Wireless Temperature Sensor'  : categoriesFilterForm.get('Wireless Temperature Sensor')?.value as boolean,
+   'Wireless Humidity Sensor'     : categoriesFilterForm.get('Wireless Humidity Sensor')?.value as boolean,
+   'Wireless AC Current Meter'    : categoriesFilterForm.get('Wireless AC Current Meter')?.value as boolean,
+   'Wireless Event-Based Sensor'  : categoriesFilterForm.get('Wireless Event-Based Sensor')?.value as boolean,
+   'Wireless Infrared Beam Sensor': categoriesFilterForm.get('Wireless Infrared Beam Sensor')?.value as boolean,
+   'Wireless 4-30mA Sensor'       : categoriesFilterForm.get('Wireless 4-30mA Sensor')?.value as boolean
+});

@@ -8,23 +8,71 @@
       <mat-divider/>
       <mat-card-content>
          <h3>Category</h3>
-         <div class="category-filters">
+         <div class="category-filters" [formGroup]="categoriesFilterForm">
             <mat-checkbox
-               *ngFor="let category of productCategoryOptions"
-               (change)="filterByCategory(category, $event.checked)"
-               [checked]="(activeCategoryFilters$ | async)?.includes(category) || false"
-               [disabled]="(productsLoading$ | async) !== false"
+               formControlName="Xemote Gateway"
+               [checked]="(activeCategoryFilters$ | async)?.['Xemote Gateway'] || false"
+               (change)="filterProductsByCategory()"
             >
-               {{category}}
+               Xemote Gateway
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Xemote Accessory"
+               [checked]="(activeCategoryFilters$ | async)?.['Xemote Accessory'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Xemote Accessory
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless Temperature Sensor"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless Temperature Sensor'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless Temperature Sensor
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless Humidity Sensor"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless Humidity Sensor'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless Humidity Sensor
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless AC Current Meter"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless AC Current Meter'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless AC Current Meter
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless Event-Based Sensor"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless Event-Based Sensor'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless Event-Based Sensor
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless Infrared Beam Sensor"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless Infrared Beam Sensor'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless Infrared Beam Sensor
+            </mat-checkbox>
+            <mat-checkbox
+               formControlName="Wireless 4-30mA Sensor"
+               [checked]="(activeCategoryFilters$ | async)?.['Wireless 4-30mA Sensor'] || false"
+               (change)="filterProductsByCategory()"
+            >
+               Wireless 4-30mA Sensor
             </mat-checkbox>
          </div>
+         <mat-divider/>
          <h3>Price</h3>
          <p>R0.00 - R10000.00</p>
          <mat-slider>
             <input matSliderStartThumb>
             <input matSliderEndThumb>
          </mat-slider>
-
       </mat-card-content>
    </mat-card>
 </div>

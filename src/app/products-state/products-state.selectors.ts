@@ -50,5 +50,5 @@ export const selectProductsQueryParams = createSelector(
 
 export const selectProductsCategoryFilters = createSelector(
    selectProductsFilter,
-   (filter) => filter?.category
+   (filter) => filter?.byCategories
 );
