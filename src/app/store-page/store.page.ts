@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ClientNavigation } from '../client-navigation/client.navigation';
 import { FooterSection } from '../footer-section/footer.section';
 import { Store } from '@ngrx/store';
-import { ProductsFiltersComponent } from '../products-filters/products-filters.component';
+import { ProductsFiltersCardComponent } from '../products-filters-card/products-filters-card.component';
 import { ProductsListComponent } from '../products-list/products-list.component';
 import { SearchComponent } from '../search/search.component';
 import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component';
@@ -16,7 +16,7 @@ import { enterStorePage } from './store.page.actions';
       CommonModule,
       ClientNavigation,
       FooterSection,
-      ProductsFiltersComponent,
+      ProductsFiltersCardComponent,
       ProductsListComponent,
       SearchComponent,
       StoreToolbarComponent
