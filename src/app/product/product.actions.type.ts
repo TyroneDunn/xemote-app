@@ -5,4 +5,3 @@ export const loadProducts = createAction(
    '[Product] Load Products',
    props<{ getProductsRequest : ProductsRequest }>()
 );
-

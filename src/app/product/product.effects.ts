@@ -14,24 +14,20 @@ import { ProductCategory, ProductsFilter } from './product.types';
   providedIn: 'root'
 })
 export class ProductEffects {
-   private actions$: Actions = inject(Actions);
-   private store: Store = inject(Store);
+   private readonly actions$: Actions = inject(Actions);
+   private readonly store: Store = inject(Store);
 
-   private loadProducts = createEffect(() =>
+   private readonly loadProducts = createEffect(() =>
       this.actions$.pipe(
-         ofType(
-            enterStorePage,
-         ),
+         ofType(enterStorePage),
          withLatestFrom(this.store.select(selectProductsQueryParams)),
          switchMap(([_, queryParams]) =>
             of(loadProducts({ getProductsRequest : queryParams }))),
       ));
 
-   private loadSortedProducts = createEffect(() =>
+   private readonly loadSortedProducts = createEffect(() =>
       this.actions$.pipe(
-         ofType(
-            toggleProductsSort
-         ),
+         ofType(toggleProductsSort),
          withLatestFrom(this.store.select(selectProductsQueryParams)),
          switchMap(([action, queryParams]) =>
             of(loadProducts({
