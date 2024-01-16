@@ -35,7 +35,7 @@ export type ProductsRequest = {
 
 export type ProductsFilter = {
    nameRegex? : string,
-   category? : ProductCategory,
+   category? : ProductCategory[],
    priceRange?: NumberRange,
 };
 

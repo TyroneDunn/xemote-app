@@ -9,10 +9,12 @@
       <mat-card-content>
          <h3>Category</h3>
          <div class="category-filters">
-            <mat-checkbox>Lorem</mat-checkbox>
-            <mat-checkbox>Ipsum</mat-checkbox>
-            <mat-checkbox>Dolar</mat-checkbox>
-            <mat-checkbox>Sit</mat-checkbox>
+            <mat-checkbox
+               *ngFor="let category of productCategoryOptions"
+               (change)="filterByCategory(category, $event.checked)"
+            >
+               {{category}}
+            </mat-checkbox>
          </div>
          <h3>Price</h3>
          <p>R0.00 - R10000.00</p>
