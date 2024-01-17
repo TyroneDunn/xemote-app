@@ -18,7 +18,8 @@ const initialState: ProductsState = {
          {category: "Wireless Event-Based Sensor", active: false},
          {category: "Wireless Infrared Beam Sensor", active: false},
          {category: "Wireless 4-30mA Sensor", active: false},
-      ]
+      ],
+      priceRange: {start: 0, end: 10000}
    },
    sort: {
       field: "Name",

@@ -13,7 +13,8 @@
       </button>
    </mat-chip-option>
    <mat-chip-option
-      *ngIf="activePriceRangeFilter$ | async"
+      *ngIf="((activePriceRangeFilter$ | async)?.start != 0) || ((activePriceRangeFilter$ |
+         async)?.end != 10000)"
       selectable="false"
       [disableRipple]="true"
    >
