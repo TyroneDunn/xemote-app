@@ -1,7 +1,7 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductCategoriesFilters } from '../product/product.types';
+import { ProductCategory } from '../product/product.types';
 
-export const filterProductsByCategories = createAction(
-   '[Products Filters Card] Filter Products By Categories',
-   props<{ categoriesFilters : ProductCategoriesFilters}>()
+export const toggleProductsCategoryFilter = createAction(
+   '[Products Filters Card] Toggle Products Category Filter',
+   props<{ category : ProductCategory}>()
 );

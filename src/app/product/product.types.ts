@@ -33,11 +33,11 @@ export type ProductsRequest = {
    page?: Page,
 };
 
-export type ProductCategoriesFilters = Record<ProductCategory, boolean>;
+export type ProductCategoryFilter = { category: ProductCategory, active: boolean };
 
 export type ProductsFilter = {
    nameRegex? : string,
-   byCategories? : ProductCategoriesFilters,
+   byCategories : ProductCategoryFilter[],
    priceRange?: NumberRange,
 };
 

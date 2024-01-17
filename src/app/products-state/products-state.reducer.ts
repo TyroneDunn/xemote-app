@@ -8,7 +8,18 @@ const initialState: ProductsState = {
    count: 0,
    loading: null,
    selectedProduct: null,
-   filter: null,
+   filter: {
+      byCategories: [
+         {category: "Xemote Gateway", active: false},
+         {category: "Xemote Accessory", active: false},
+         {category: "Wireless Temperature Sensor", active: false},
+         {category: "Wireless Humidity Sensor", active: false},
+         {category: "Wireless AC Current Meter", active: false},
+         {category: "Wireless Event-Based Sensor", active: false},
+         {category: "Wireless Infrared Beam Sensor", active: false},
+         {category: "Wireless 4-30mA Sensor", active: false},
+      ]
+   },
    sort: {
       field: "Name",
       order: "asc"

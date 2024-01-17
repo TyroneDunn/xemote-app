@@ -7,8 +7,10 @@ import { Store } from '@ngrx/store';
 import { selectProductsQueryParams } from '../products-state/products-state.selectors';
 import { toggleProductsSort } from '../products-sort/products-sort.actions';
 import { negateOrder } from '../shared/order.utility';
-import { filterProductsByCategories } from '../products-filters-card/products-filters-card.actions';
-import { ProductCategoriesFilters } from './product.types';
+import { ProductCategory, ProductsRequest } from './product.types';
+import {
+   toggleProductsCategoryFilter
+} from '../products-filters-card/products-filters-card.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -45,21 +47,32 @@ export class ProductEffects {
 
    private readonly loadProductsFilteredByCategory = createEffect(() =>
       this.actions$.pipe(
-         ofType(filterProductsByCategories),
+         ofType(toggleProductsCategoryFilter),
          withLatestFrom(this.store.select(selectProductsQueryParams)),
          switchMap(([action, queryParams]) =>
             of(loadProducts({
                getProductsRequest: {
-                  ...queryParams,
-                  ...mapProductsCategoriesFiltersToProductsFilter(action.categoriesFilters)
+                  ...toggleCategoryFilterActive(queryParams, action.category)
                },
             })))
       ));
 }
 
-const mapProductsCategoriesFiltersToProductsFilter =
-   (categoriesFilters : ProductCategoriesFilters) => ({
-      filter: {
-         byCategories: { ...categoriesFilters }
-      }
-   });
+const toggleCategoryFilterActive =
+   (queryParams: ProductsRequest, categoriesFilter : ProductCategory) => {
+      const categoriesFilters = queryParams.filter?.byCategories || [];
+      const oldCategoryFilter = categoriesFilters.find(filter => filter.category === categoriesFilter);
+      return ({
+         ...queryParams,
+         ...oldCategoryFilter && {
+            filter: {
+               byCategories: categoriesFilters
+                  .filter(filter => filter.category !== categoriesFilter)
+                  .concat({
+                     category: oldCategoryFilter.category,
+                     active: !oldCategoryFilter.active
+                  })
+            },
+         }
+      });
+   };
