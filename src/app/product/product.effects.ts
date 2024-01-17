@@ -9,8 +9,12 @@ import { toggleProductsSort } from '../products-sort/products-sort.actions';
 import { negateOrder } from '../shared/order.utility';
 import { ProductCategory, ProductsRequest } from './product.types';
 import {
-   toggleProductsCategoryFilter
+   toggleProductsCategoryFilter,
 } from '../products-category-filters/products-category-filters.actions';
+import {
+   updateProductsPriceRangeFilter,
+} from '../products-price-range-filter/products-price-range-filter.actions';
+import { NumberRange } from '../shared/number-range.type';
 
 @Injectable({
   providedIn: 'root'
@@ -56,6 +60,18 @@ export class ProductEffects {
                },
             })))
       ));
+
+   private readonly loadProductsFilteredByPriceRange = createEffect(() =>
+      this.actions$.pipe(
+         ofType(updateProductsPriceRangeFilter),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([ action, queryParams ]) =>
+            of(loadProducts({
+               getProductsRequest: {
+                  ...replaceProductsPriceRangeFilter(queryParams, action.priceRange),
+               },
+            }))),
+      ));
 }
 
 const toggleCategoryFilterActive =
@@ -75,4 +91,18 @@ const toggleCategoryFilterActive =
             },
          }
       });
+   };
+
+const replaceProductsPriceRangeFilter =
+   (queryParams : ProductsRequest, priceRange : NumberRange): ProductsRequest => {
+      if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined) {
+         return {
+            ...queryParams,
+            filter: {
+               ...(queryParams.filter),
+               priceRange: { start: priceRange.start, end: priceRange.end }
+            }
+         }
+      }
+      return {...queryParams};
    };

@@ -13,11 +13,11 @@
       >
          <input matSliderStartThumb
                 [(value)]="minPrice"
-                (valueChange)="updateProductPriceRangeFilter()"
+                (valueChange)="minProductPriceRangeFilterChanged($event)"
          >
          <input matSliderEndThumb
                 [(value)]="maxPrice"
-                (valueChange)="updateProductPriceRangeFilter()"
+                (valueChange)="maxProductPriceRangeFilterChanged($event)"
          >
       </mat-slider>
    </div>
