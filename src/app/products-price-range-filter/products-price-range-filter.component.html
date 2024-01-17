@@ -1,7 +1,8 @@
 <div class="products-price-range-filter-container">
    <div class="products-price-range-filter-header">
       <h3>Price Range</h3>
-      <p>R{{minPrice | number}} - R{{maxPrice | number}}</p>
+      <p>R{{(priceRangeFilter$ | async)?.start || 0 | number}} -
+         R{{(priceRangeFilter$ | async)?.end || priceRangeMax | number}}</p>
    </div>
    <div class="price-range-slider-container">
       <mat-slider
@@ -12,12 +13,12 @@
          step="100"
       >
          <input matSliderStartThumb
-                [(value)]="minPrice"
-                (valueChange)="minProductPriceRangeFilterChanged($event)"
+                [value]="(priceRangeFilter$ | async)?.start"
+                (dragEnd)="productPriceRangeFilterChanged($event)"
          >
          <input matSliderEndThumb
-                [(value)]="maxPrice"
-                (valueChange)="maxProductPriceRangeFilterChanged($event)"
+                [value]="(priceRangeFilter$ | async)?.end || priceRangeMax"
+                (dragEnd)="productPriceRangeFilterChanged($event)"
          >
       </mat-slider>
    </div>

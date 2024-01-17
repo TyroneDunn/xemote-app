@@ -1,10 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {
+   MatSliderDragEvent,
    MatSliderModule,
 } from '@angular/material/slider';
 import { Store } from '@ngrx/store';
 import { updateProductsPriceRangeFilter } from './products-price-range-filter.actions';
+import { selectProductsPriceRangeFilter } from '../products-state/products-state.selectors';
 
 @Component({
   selector: 'app-products-price-range-filter',
@@ -16,22 +18,13 @@ import { updateProductsPriceRangeFilter } from './products-price-range-filter.ac
 export class ProductsPriceRangeFilterComponent {
    private store : Store = inject(Store);
    public readonly priceRangeMax : number = 10000;
-   public minPrice : number = 0;
-   public maxPrice : number = this.priceRangeMax;
+   public priceRangeFilter$ = this.store.select(selectProductsPriceRangeFilter);
 
-   public minProductPriceRangeFilterChanged($event : number) : void {
+   public productPriceRangeFilterChanged($event : MatSliderDragEvent) : void {
       this.store.dispatch(updateProductsPriceRangeFilter({
          priceRange: {
-            start: $event,
-            end: this.maxPrice
-         }}));
-   }
-
-   public maxProductPriceRangeFilterChanged($event : number) : void {
-      this.store.dispatch(updateProductsPriceRangeFilter({
-         priceRange: {
-            start: this.minPrice,
-            end: $event
+            start: $event.parent._getInput(1)?.value,
+            end: $event.parent._getInput(0)?.value
          }}));
    }
 }
