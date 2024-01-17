@@ -4,7 +4,8 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import {
-   selectActiveProductsCategoryFilters
+   selectActiveProductsCategoryFilters,
+   selectProductsPriceRangeFilter,
 } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { ProductCategory, ProductCategoryFilter } from '../product/product.types';
@@ -20,6 +21,8 @@ export class ActiveProductsFiltersChipListComponent {
    private store : Store = inject(Store);
    protected activeCategoryFilters$: Observable<ProductCategoryFilter[]> =
       this.store.select(selectActiveProductsCategoryFilters);
+   protected activePriceRangeFilter$ =
+      this.store.select(selectProductsPriceRangeFilter);
 
    public removeCategoryFilter(category : ProductCategory) : void {
 

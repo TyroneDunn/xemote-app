@@ -12,4 +12,16 @@
          <mat-icon>close</mat-icon>
       </button>
    </mat-chip-option>
+   <mat-chip-option
+      *ngIf="activePriceRangeFilter$ | async"
+      selectable="false"
+      [disableRipple]="true"
+   >
+      R{{(activePriceRangeFilter$ | async)?.start}} - R{{(activePriceRangeFilter$ | async)?.end}}
+      <button
+         matChipRemove
+      >
+         <mat-icon>close</mat-icon>
+      </button>
+   </mat-chip-option>
 </mat-chip-listbox>
