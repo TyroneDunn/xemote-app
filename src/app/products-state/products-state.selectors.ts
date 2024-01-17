@@ -50,7 +50,13 @@ export const selectProductsQueryParams = createSelector(
 
 export const selectProductsCategoryFilters = createSelector(
    selectProductsFilter,
-   (filter) => filter?.byCategories
+   (filter) => filter?.byCategories || []
+);
+
+export const selectActiveProductsCategoryFilters = createSelector(
+   selectProductsFilter,
+   (filter) => filter?.byCategories.filter(categoryFilters =>
+      categoryFilters.active) || []
 );
 
 export const selectProductsPriceRangeFilter = createSelector(
