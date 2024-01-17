@@ -10,7 +10,7 @@ import { negateOrder } from '../shared/order.utility';
 import { ProductCategory, ProductsRequest } from './product.types';
 import {
    toggleProductsCategoryFilter
-} from '../products-filters-card/products-filters-card.actions';
+} from '../products-category-filters/products-category-filters.actions';
 
 @Injectable({
   providedIn: 'root'

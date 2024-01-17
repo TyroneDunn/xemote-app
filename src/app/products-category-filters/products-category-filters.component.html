@@ -1,0 +1,11 @@
+<div class="products-category-filters-container">
+   <h3>Category</h3>
+   <mat-checkbox
+      *ngFor="let filter of categoryFilters"
+      [disabled]="(this.productsLoading$ | async) == true"
+      [checked]="(filter.active | async) || false"
+      (change)="toggleProductsCategoryFilter(filter.category)"
+   >
+      {{ filter.category }}
+   </mat-checkbox>
+</div>

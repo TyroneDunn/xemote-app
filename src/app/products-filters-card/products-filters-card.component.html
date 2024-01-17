@@ -3,24 +3,14 @@
       <mat-card-header>
          <mat-card-title>
             <h1>Filter</h1>
+            <br>
          </mat-card-title>
       </mat-card-header>
       <mat-divider/>
       <mat-card-content>
-         <h3>Category</h3>
-         <!--         todo : extract product category filters       -->
-         <div class="category-filters">
-            <mat-checkbox
-               *ngFor="let filter of categoryFilters"
-               [disabled]="(this.productsLoading$ | async) == true"
-               [checked]="(filter.active | async) || false"
-               (change)="toggleProductsCategoryFilter(filter.category)"
-            >
-               {{filter.category}}
-            </mat-checkbox>
-            <mat-divider/>
-            <app-products-price-range-filter/>
-         </div>
+         <app-products-category-filters/>
+         <mat-divider/>
+         <app-products-price-range-filter/>
       </mat-card-content>
    </mat-card>
 </div>
