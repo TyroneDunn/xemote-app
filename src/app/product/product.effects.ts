@@ -76,21 +76,24 @@ export class ProductEffects {
 
 const toggleCategoryFilterActive =
    (queryParams: ProductsRequest, categoriesFilter : ProductCategory) => {
-      const categoriesFilters = queryParams.filter?.byCategories || [];
-      const oldCategoryFilter = categoriesFilters.find(filter => filter.category === categoriesFilter);
-      return ({
-         ...queryParams,
-         ...oldCategoryFilter && {
-            filter: {
-               byCategories: categoriesFilters
+      if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined) {
+         const categoriesFilters = queryParams.filter?.byCategories || [];
+         const oldCategoryFilter = categoriesFilters.find(filter => filter.category === categoriesFilter);
+         if (oldCategoryFilter !== undefined)
+            return ({
+               ...queryParams,
+               filter: {
+                  ...queryParams.filter,
+                  byCategories: categoriesFilters
                   .filter(filter => filter.category !== categoriesFilter)
                   .concat({
                      category: oldCategoryFilter.category,
                      active: !oldCategoryFilter.active
                   })
-            },
-         }
-      });
+               }
+            });
+      }
+      return {...queryParams};
    };
 
 const replaceProductsPriceRangeFilter =
