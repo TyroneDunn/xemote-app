@@ -1,10 +1,8 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatSliderModule } from '@angular/material/slider';
 import { ProductCategoryFilter } from '../product/product.types';
 import { Store } from '@ngrx/store';
 import { toggleProductsCategoryFilter } from './products-filters-card.actions';
@@ -14,13 +12,15 @@ import {
 } from '../products-state/products-state.selectors';
 import { Observable, of, switchMap } from 'rxjs';
 import { ProductCategory } from '../product/product.types';
+import {
+   ProductsPriceRangeFilterComponent
+} from '../products-price-range-filter/products-price-range-filter.component';
 
 @Component({
   selector: 'app-products-filters-card',
   standalone: true,
    imports: [
       CommonModule,
-      ProductCardComponent,
       MatCardModule,
       MatDividerModule,
       MatCheckboxModule,
