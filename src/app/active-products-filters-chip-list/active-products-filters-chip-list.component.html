@@ -1,0 +1,15 @@
+<mat-chip-listbox>
+   <mat-chip-option
+      selectable="false"
+      *ngFor="let filter of (activeCategoryFilters$ | async)"
+      [disableRipple]="true"
+   >
+      {{filter.category}}
+      <button
+         matChipRemove
+         (click)="removeCategoryFilter(filter.category)"
+      >
+         <mat-icon>close</mat-icon>
+      </button>
+   </mat-chip-option>
+</mat-chip-listbox>
