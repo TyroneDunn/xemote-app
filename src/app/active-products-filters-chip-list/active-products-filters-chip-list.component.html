@@ -1,4 +1,4 @@
-<mat-chip-listbox>
+<mat-chip-listbox [disabled]="productsLoading | async">
    <mat-chip-option
       selectable="false"
       *ngFor="let filter of (activeCategoryFilters$ | async)"
@@ -20,6 +20,7 @@
       R{{(activePriceRangeFilter$ | async)?.start}} - R{{(activePriceRangeFilter$ | async)?.end}}
       <button
          matChipRemove
+         (click)="removePriceRangeFilter()"
       >
          <mat-icon>close</mat-icon>
       </button>

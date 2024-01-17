@@ -4,14 +4,18 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import {
-   selectActiveProductsCategoryFilters,
+   selectActiveProductsCategoryFilters, selectProductsLoading,
    selectProductsPriceRangeFilter,
 } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { ProductCategory, ProductCategoryFilter } from '../product/product.types';
+import {
+   removeCategoryFilter,
+   removePriceRangeFilter,
+} from './active-products-filters-chip-list.actions';
 
 @Component({
-   selector   : 'app-active-products-filter-chip-list',
+   selector   : 'app-active-products-filters-chip-list',
    standalone : true,
    imports    : [ CommonModule, MatChipsModule, MatIconModule ],
    templateUrl: './active-products-filters-chip-list.component.html',
@@ -23,8 +27,14 @@ export class ActiveProductsFiltersChipListComponent {
       this.store.select(selectActiveProductsCategoryFilters);
    protected activePriceRangeFilter$ =
       this.store.select(selectProductsPriceRangeFilter);
+   protected productsLoading: Observable<boolean | null> =
+      this.store.select(selectProductsLoading);
 
    public removeCategoryFilter(category : ProductCategory) : void {
+      this.store.dispatch(removeCategoryFilter({category: category}));
+   }
 
+   public removePriceRangeFilter() : void {
+      this.store.dispatch(removePriceRangeFilter());
    }
 }

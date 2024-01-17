@@ -15,6 +15,10 @@ import {
    updateProductsPriceRangeFilter,
 } from '../products-price-range-filter/products-price-range-filter.actions';
 import { NumberRange } from '../shared/number-range.type';
+import {
+   removeCategoryFilter,
+   removePriceRangeFilter,
+} from '../active-products-filters-chip-list/active-products-filters-chip-list.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -61,6 +65,20 @@ export class ProductEffects {
             })))
       ));
 
+   private readonly removeCategoryFilterAndLoadProducts = createEffect(() => {
+      return this.actions$.pipe(
+         ofType(removeCategoryFilter),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([action, queryParams]) => {
+            return of(loadProducts({
+               getProductsRequest: {
+                  ...removeCategoryFilterFromQueryParams(queryParams, action.category)
+               },
+            }));
+         })
+      );
+   });
+
    private readonly loadProductsFilteredByPriceRange = createEffect(() =>
       this.actions$.pipe(
          ofType(updateProductsPriceRangeFilter),
@@ -69,6 +87,18 @@ export class ProductEffects {
             of(loadProducts({
                getProductsRequest: {
                   ...replaceProductsPriceRangeFilter(queryParams, action.priceRange),
+               },
+            }))),
+      ));
+
+   private readonly removePriceRangeFilterAndLoadProducts = createEffect(() =>
+      this.actions$.pipe(
+         ofType(removePriceRangeFilter),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([ , queryParams ]) =>
+            of(loadProducts({
+               getProductsRequest: {
+                  ...removePriceRangeFilterFromQueryParams(queryParams),
                },
             }))),
       ));
@@ -96,16 +126,50 @@ const toggleCategoryFilterActive =
       return {...queryParams};
    };
 
+const removeCategoryFilterFromQueryParams =
+   (queryParams : ProductsRequest, category : ProductCategory) => {
+      if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined) {
+         const categoriesFilters = queryParams.filter?.byCategories || [];
+         return {
+            ...queryParams,
+            filter: {
+               ...queryParams.filter,
+               byCategories: categoriesFilters
+               .filter(filter => filter.category !== category)
+               .concat({
+                  category: category,
+                  active: false
+               })
+            }
+         };
+      }
+      return {...queryParams};
+   };
+
+
 const replaceProductsPriceRangeFilter =
    (queryParams : ProductsRequest, priceRange : NumberRange): ProductsRequest => {
-      if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined) {
+      if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined)
          return {
             ...queryParams,
             filter: {
                ...(queryParams.filter),
-               priceRange: { start: priceRange.start, end: priceRange.end }
-            }
-         }
-      }
+               priceRange: { start: priceRange.start, end: priceRange.end },
+            },
+         };
       return {...queryParams};
    };
+
+const removePriceRangeFilterFromQueryParams = (queryParams : ProductsRequest) => {
+   if (queryParams !== undefined && queryParams.filter?.byCategories !== undefined) {
+      return {
+         ...queryParams,
+         filter: {
+            ...(queryParams.filter),
+            priceRange: {start: 0, end: 10000}
+         }
+      }
+   }
+   return {...queryParams};
+};
+
