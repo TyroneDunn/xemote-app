@@ -1,0 +1,26 @@
+.products-price-range-filter-container {
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   margin-top: 1rem;
+   margin-bottom: 1rem;
+}
+
+.products-price-range-filter-header {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   gap: 1rem;
+   align-items: center;
+}
+
+.price-range-slider-container {
+   display: flex;
+   flex-direction: column;
+   margin-left: 1rem;
+   margin-right: 1rem;
+
+   .price-range-slider {
+      width: auto;
+   }
+}

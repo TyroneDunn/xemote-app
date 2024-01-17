@@ -24,7 +24,7 @@ import { ProductCategory } from '../product/product.types';
       MatCardModule,
       MatDividerModule,
       MatCheckboxModule,
-      MatSliderModule,
+      ProductsPriceRangeFilterComponent,
    ],
   templateUrl: './products-filters-card.component.html',
   styleUrls: ['./products-filters-card.component.scss']

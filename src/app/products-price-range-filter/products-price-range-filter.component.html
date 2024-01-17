@@ -1,0 +1,24 @@
+<div class="products-price-range-filter-container">
+   <div class="products-price-range-filter-header">
+      <h3>Price Range</h3>
+      <p>R{{minPrice | number}} - R{{maxPrice | number}}</p>
+   </div>
+   <div class="price-range-slider-container">
+      <mat-slider
+         class="price-range-slider"
+         discrete
+         [max]="priceRangeMax"
+         [disableRipple]="true"
+         step="100"
+      >
+         <input matSliderStartThumb
+                [(value)]="minPrice"
+                (valueChange)="updateProductPriceRangeFilter()"
+         >
+         <input matSliderEndThumb
+                [(value)]="maxPrice"
+                (valueChange)="updateProductPriceRangeFilter()"
+         >
+      </mat-slider>
+   </div>
+</div>
