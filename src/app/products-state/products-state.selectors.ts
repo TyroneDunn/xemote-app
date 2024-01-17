@@ -52,3 +52,8 @@ export const selectProductsCategoryFilters = createSelector(
    selectProductsFilter,
    (filter) => filter?.byCategories
 );
+
+export const selectProductsPriceRangeFilter = createSelector(
+   selectProductsFilter,
+   (filter) => filter?.priceRange
+);
