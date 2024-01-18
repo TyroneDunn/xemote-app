@@ -1,0 +1,11 @@
+.form-container {
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+}
+
+.no-subscript {
+  .mat-mdc-form-field-subscript-wrapper {
+    height: 0;
+  }
+}

@@ -1,1 +1,34 @@
-<p>search works!</p>
+<form
+   [formGroup]="searchForm"
+   (ngSubmit)="handleSubmitSearch(searchQuery())"
+>
+   <mat-form-field appearance="outline" class="search-field no-subscript toolbar-action">
+      <button
+         matIconPrefix
+         mat-icon-button
+         aria-label="Search"
+      >
+         <mat-icon>search</mat-icon>
+      </button>
+
+      <button
+         *ngIf="searchQuery()"
+         matIconSuffix
+         mat-icon-button
+         aria-label="Clear"
+         matTooltip="Clear"
+         (click)="handleClearSearchQuery()"
+      >
+         <mat-icon>close</mat-icon>
+      </button>
+
+      <input
+         matInput
+         type="text"
+         placeholder="Search"
+         formControlName="searchQuery"
+         [value]="'abc'"
+      >
+<!--      [value]="query$ | async"-->
+   </mat-form-field>
+</form>

@@ -21,6 +21,7 @@ import {
 } from '../active-products-filters-chip-list/active-products-filters-chip-list.actions';
 import { pageProducts } from '../products-list/products-list.actions';
 import { Page } from '../shared/page.type';
+import { searchProducts } from '../search/search.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -116,6 +117,19 @@ export class ProductEffects {
                },
             }))),
       ));
+
+   private readonly loadQueriedProducts = createEffect(() =>
+      this.actions$.pipe(
+         ofType(searchProducts),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([action, queryParams ]) =>
+            of(loadProducts({
+               getProductsRequest: {
+                  ...updateProductsQuery(queryParams, action.query),
+               },
+            }))),
+      )
+   );
 }
 
 const toggleCategoryFilterActive =
@@ -192,3 +206,14 @@ const updateProductsPageFilter = (productsRequest : ProductsRequest, page : Page
    page: page,
 });
 
+const updateProductsQuery = (productsRequest : ProductsRequest, query : string) => {
+   if (productsRequest !== undefined && productsRequest.filter?.byCategories !== undefined)
+      return {
+         ...productsRequest,
+         filter: {
+            ...productsRequest.filter,
+            nameRegex: query,
+         },
+      };
+   return { ...productsRequest };
+};
