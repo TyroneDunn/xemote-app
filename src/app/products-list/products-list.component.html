@@ -21,9 +21,17 @@
       *ngIf="(productsLoading | async) === false"
    >
       <app-product-card
-         *ngFor="let product of (products | async)"
+         *ngFor="let product of (products$ | async)"
          [product]="product"
       />
    </div>
-   <mat-paginator *ngIf="(productsLoading | async) === false"/>
+   <mat-paginator
+      *ngIf="(productsLoading | async) === false"
+      [pageIndex]="(page$ | async)?.index || 0"
+      [pageSize]="(page$ | async)?.limit || 0"
+      [length]="(products$ | async)?.length || 0"
+      [hidePageSize]="true"
+      [showFirstLastButtons]="true"
+      (page)="page($event)"
+   />
 </div>

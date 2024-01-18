@@ -19,6 +19,8 @@ import {
    removeCategoryFilter,
    removePriceRangeFilter,
 } from '../active-products-filters-chip-list/active-products-filters-chip-list.actions';
+import { pageProducts } from '../products-list/products-list.actions';
+import { Page } from '../shared/page.type';
 
 @Injectable({
   providedIn: 'root'
@@ -102,6 +104,18 @@ export class ProductEffects {
                },
             }))),
       ));
+
+   private readonly loadPagedProducts = createEffect(() =>
+      this.actions$.pipe(
+         ofType(pageProducts),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([action, queryParams ]) =>
+            of(loadProducts({
+               getProductsRequest: {
+                  ...updateProductsPageFilter(queryParams, action.page),
+               },
+            }))),
+      ));
 }
 
 const toggleCategoryFilterActive =
@@ -172,4 +186,9 @@ const removePriceRangeFilterFromQueryParams = (queryParams : ProductsRequest) =>
    }
    return {...queryParams};
 };
+
+const updateProductsPageFilter = (productsRequest : ProductsRequest, page : Page) => ({
+   ...productsRequest,
+   page: page,
+});
 

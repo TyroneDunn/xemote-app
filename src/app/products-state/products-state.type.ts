@@ -12,5 +12,5 @@ export type ProductsState = {
    selectedProduct : Product | null,
    filter : ProductsFilter | null,
    sort : ProductsSort | null;
-   page : Page | null
+   page : Page
 };

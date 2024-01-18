@@ -14,9 +14,19 @@ export const selectProductsCollection = createSelector(
    (state) => state.collection
 );
 
+export const selectProductsCount = createSelector(
+   selectProductsState,
+   (state) => state.count
+);
+
 export const selectProductsLoading = createSelector(
    selectProductsState,
    (state) => state.loading
+);
+
+export const selectProductsQuery = createSelector(
+   selectProductsState,
+   (state) => state.filter?.nameRegex
 );
 
 export const selectProductsFilter = createSelector(
