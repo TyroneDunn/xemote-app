@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { map, Observable } from 'rxjs';
+import { combineLatestWith, map, Observable } from 'rxjs';
 import { Product } from '../product/product.types';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -39,11 +39,15 @@ export class ProductsListComponent {
    public count$: Observable<number> = this.store.select(selectProductsCount);
    public query$ = this.store.select(selectProductsQuery);
    public page$ = this.store.select(selectProductsPage);
-   public currentIndex$ = this.page$.pipe(map(page => {
+   public currentIndexLowerBounds$ = this.page$.pipe(map(page => {
       if (page != undefined)
          return (page.index * page.limit) + 1;
       else return 1;
    }));
+   public currentIndexUpperBounds$ = this.currentIndexLowerBounds$.pipe(
+      combineLatestWith(this.products$),
+      map(([lowerBounds, products]) => lowerBounds + products.length - 1)
+   );
    public productsLoading: Observable<boolean | null> = this.store.select(selectProductsLoading);
 
    public page($event : PageEvent) : void {

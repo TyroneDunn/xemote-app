@@ -1,7 +1,13 @@
 <div class="products-list-container">
    <div class="products-queries">
       <div class="query-and-sort">
-         <span><h3>1-20 of 138 results for "Xemote"</h3></span>
+         <span>
+            <h3 *ngIf="(query$ | async) && (page$ | async)?.limit != 0">
+               {{currentIndexLowerBounds$ | async}}-{{currentIndexUpperBounds$ | async}}
+               of {{count$ | async}}
+               results for "{{query$ | async}}"
+            </h3>
+         </span>
          <app-products-sort/>
       </div>
       <div class="active-filters-container">
