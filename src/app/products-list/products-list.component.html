@@ -35,7 +35,7 @@
       *ngIf="(productsLoading | async) === false"
       [pageIndex]="(page$ | async)?.index || 0"
       [pageSize]="(page$ | async)?.limit || 0"
-      [length]="(products$ | async)?.length || 0"
+      [length]="(count$ | async) || 0"
       [hidePageSize]="true"
       [showFirstLastButtons]="true"
       (page)="page($event)"
