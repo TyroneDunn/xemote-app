@@ -21,7 +21,6 @@ export type ProductCategory =
    | "Xemote Gateway"
    | "Xemote Accessory"
    | "Wireless Temperature Sensor"
-   | "Wireless Humidity Sensor"
    | "Wireless AC Current Meter"
    | "Wireless Event-Based Sensor"
    | "Wireless Infrared Beam Sensor"

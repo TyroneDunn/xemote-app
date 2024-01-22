@@ -13,11 +13,11 @@ const initialState: ProductsState = {
          {category: "Xemote Gateway", active: false},
          {category: "Xemote Accessory", active: false},
          {category: "Wireless Temperature Sensor", active: false},
-         {category: "Wireless Humidity Sensor", active: false},
          {category: "Wireless AC Current Meter", active: false},
          {category: "Wireless Event-Based Sensor", active: false},
          {category: "Wireless Infrared Beam Sensor", active: false},
          {category: "Wireless 4-30mA Sensor", active: false},
+         {category: "Wireless Control Device", active: false},
       ],
       priceRange: {start: 0, end: 10000}
    },

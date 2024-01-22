@@ -35,11 +35,11 @@ export class ProductsCategoryFiltersComponent {
       { category: "Xemote Gateway", active: this.categoryFilterIsActive("Xemote Gateway") },
       { category: "Xemote Accessory", active: this.categoryFilterIsActive("Xemote Accessory") },
       { category: "Wireless Temperature Sensor", active: this.categoryFilterIsActive("Wireless Temperature Sensor") },
-      { category: "Wireless Humidity Sensor", active: this.categoryFilterIsActive("Wireless Humidity Sensor") },
       { category: "Wireless AC Current Meter", active: this.categoryFilterIsActive("Wireless AC Current Meter") },
       { category: "Wireless Event-Based Sensor", active: this.categoryFilterIsActive("Wireless Event-Based Sensor") },
       { category: "Wireless Infrared Beam Sensor", active: this.categoryFilterIsActive("Wireless Infrared Beam Sensor") },
       { category: "Wireless 4-30mA Sensor", active: this.categoryFilterIsActive("Wireless 4-30mA Sensor") },
+      { category: "Wireless Control Device", active: this.categoryFilterIsActive("Wireless Control Device") },
    ];
 
    protected toggleProductsCategoryFilter(category : string) : void {
