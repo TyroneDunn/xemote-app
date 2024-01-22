@@ -1,18 +1,34 @@
-.offerings-section {
+.offerings-section-container {
    display: flex;
    flex-direction: column;
    margin: 3rem;
-   text-align: center;
 
    .offerings-section-header {
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding-bottom: 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+
+      .offerings-section-quote-container{
+         display: flex;
+         align-items: center;
+
+         .offerings-section-quote {
+            text-align: center;
+         }
+      }
    }
 
    .offerings-section-content {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+   }
+
+   .offerings-card-header {
+      //margin-left: auto;
+      //margin-right: auto;
    }
 
    .offerings-card-content {
