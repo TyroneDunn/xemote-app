@@ -1,40 +1,43 @@
 <div class="testimonials-section">
-   <p-carousel
-      [value]="['Lorem', 'Ipsum', 'Dolar']"
-      [numVisible]="1"
-      [numScroll]="1"
-      [circular]="true"
-      [autoplayInterval]="7000"
-   >
-      <ng-template let-testimonial pTemplate="item">
-         <div>
+   <div class="testimonials">
+      <p-carousel
+         [value]="['Lorem', 'Ipsum', 'Dolar']"
+         [numVisible]="1"
+         [numScroll]="1"
+         [circular]="true"
+         [autoplayInterval]="7000"
+      >
+         <ng-template let-testimonial pTemplate="item">
             <div>
-               <img/>
-               <h2>{{testimonial}}</h2>
+               <div>
+                  <img/>
+                  <h2>{{testimonial}}</h2>
+               </div>
+               <div>
+                  <h4>M. Ali</h4>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Gravida rutrum quisque non tellus orci ac. Suspendisse interdum consectetur libero id faucibus. Id eu nisl nunc mi ipsum faucibus vitae. Justo nec ultrices dui sapien eget. Massa ultricies mi quis hendrerit dolor magna eget est. Curabitur vitae nunc sed velit. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Et malesuada fames ac turpis. Id semper risus in hendrerit gravida rutrum. Malesuada proin libero nunc consequat interdum varius sit amet. Posuere morbi leo urna molestie at. Blandit turpis cursus in hac. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Mauris vitae ultricies leo integer malesuada. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam.</p>
+               </div>
             </div>
-            <div>
-               <h4>M. Ali</h4>
-               <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pharetra pharetra massa massa ultricies mi quis hendrerit dolor. Gravida rutrum quisque non tellus orci ac. Suspendisse interdum consectetur libero id faucibus. Id eu nisl nunc mi ipsum faucibus vitae. Justo nec ultrices dui sapien eget. Massa ultricies mi quis hendrerit dolor magna eget est. Curabitur vitae nunc sed velit. Faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Et malesuada fames ac turpis. Id semper risus in hendrerit gravida rutrum. Malesuada proin libero nunc consequat interdum varius sit amet. Posuere morbi leo urna molestie at. Blandit turpis cursus in hac. Eleifend mi in nulla posuere sollicitudin aliquam ultrices. Mauris vitae ultricies leo integer malesuada. Tortor pretium viverra suspendisse potenti nullam ac tortor vitae purus. Quis enim lobortis scelerisque fermentum dui faucibus in ornare quam.</p>
-            </div>
-         </div>
-      </ng-template>
-   </p-carousel>
-
-   <p-carousel
-      [value]="['Sit', 'Amet', 'Lapiz', 'Morales', 'Parker', 'Coetsee', 'Poulter', 'Braynt',
+         </ng-template>
+      </p-carousel>
+   </div>
+   <div class="clients">
+      <p-carousel
+         [value]="['Sit', 'Amet', 'Lapiz', 'Morales', 'Parker', 'Coetsee', 'Poulter', 'Braynt',
       'Mancini', 'Gianna', 'Natalia']"
-      [numVisible]="5"
-      [numScroll]="1"
-      [circular]="true"
-      [autoplayInterval]="7000"
-   >
-      <ng-template let-client pTemplate="item">
-         <div>
+         [numVisible]="5"
+         [numScroll]="1"
+         [circular]="true"
+         [autoplayInterval]="7000"
+      >
+         <ng-template let-client pTemplate="item">
             <div>
-               <img/>
-               <h2>{{client}}</h2>
+               <div>
+                  <img/>
+                  <h2>{{client}}</h2>
+               </div>
             </div>
-         </div>
-      </ng-template>
-   </p-carousel>
+         </ng-template>
+      </p-carousel>
+   </div>
 </div>
