@@ -55,12 +55,12 @@ export type GetProductsResponse = {
 };
 
 export type ProductsSortByOption =
-   | "Name"
-   | "Price"
-   | "Category";
+   | "name"
+   | "price"
+   | "category";
 
 export const productSortByOptions : ProductsSortByOption[] = [
-   "Name",
-   "Price",
-   "Category",
+   "name",
+   "price",
+   "category",
 ];
