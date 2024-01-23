@@ -29,11 +29,12 @@ $xemote-app-typography-config: mat.define-typography-config(
    $headline-1: mat.define-typography-level(
       $font-family: unquote("Inter"),
       $font-size: 93px,
-      $font-weight: 500
+      $font-weight: 700
    ),
    $headline-2: mat.define-typography-level(
       $font-family: unquote("Inter"),
-      $font-size: 58px
+      $font-size: 58px,
+      $font-weight: 700
    ),
    $headline-3: mat.define-typography-level(
       $font-family: unquote("Inter"),
@@ -98,6 +99,7 @@ $xemote-app-theme: mat.define-dark-theme((
 
 html, body {
    height: 100%;
+   //background-color: #212121;
 }
 
 body {
