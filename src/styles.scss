@@ -38,19 +38,23 @@ $xemote-app-typography-config: mat.define-typography-config(
    ),
    $headline-3: mat.define-typography-level(
       $font-family: unquote("Inter"),
-      $font-size: 47px
+      $font-size: 47px,
+      $font-weight: 700
    ),
    $headline-4: mat.define-typography-level(
       $font-family: unquote("Inter"),
-      $font-size: 33px
+      $font-size: 33px,
+      $font-weight: 500
    ),
    $headline-5: mat.define-typography-level(
       $font-family: unquote("Inter"),
-      $font-size: 23px
+      $font-size: 23px,
+      $font-weight: 500
    ),
    $headline-6: mat.define-typography-level(
       $font-family: unquote("Inter"),
-      $font-size: 19px
+      $font-size: 19px,
+      $font-weight: 500
    ),
    $subtitle-1: mat.define-typography-level(
       $font-family: unquote("Inter"),

@@ -1,14 +1,13 @@
 .offerings-section-container {
    display: flex;
    flex-direction: column;
-   margin: 3rem;
+   margin-top: 4rem;
+   margin-bottom: 4rem;
 
    .offerings-section-header {
       display: grid;
       grid-template-columns: 1fr 2fr;
-      padding-bottom: 2rem;
-      margin-left: 2rem;
-      margin-right: 2rem;
+      gap: 2rem;
 
       .offerings-section-quote-container{
          display: flex;
@@ -24,11 +23,24 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 1rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+   }
+
+   .offerings-card-container {
+      margin-left: 1rem;
+      margin-right: 1rem;
    }
 
    .offerings-card-header {
-      //margin-left: auto;
-      //margin-right: auto;
+      margin-bottom: 1rem;
+   }
+
+   .offerings-card-title {
+      margin-top: 1rem;
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
    }
 
    .offerings-card-content {
