@@ -19,13 +19,13 @@ const initialState: ProductsState = {
          {category: "Wireless 4-30mA Sensor", active: false},
          {category: "Wireless Control Device", active: false},
       ],
-      priceRange: {start: 0, end: 10000}
+      priceRange: {start: 0, end: 2000},
    },
    sort: {
-      field: "Name",
+      field: "name",
       order: "asc"
    },
-   page: null,
+   page: {index: 0, limit: 16},
 };
 
 export const productsReducer: ActionReducer<ProductsState> = createReducer(
