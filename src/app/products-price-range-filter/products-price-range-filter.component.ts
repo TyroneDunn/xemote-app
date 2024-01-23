@@ -17,7 +17,7 @@ import { selectProductsPriceRangeFilter } from '../products-state/products-state
 })
 export class ProductsPriceRangeFilterComponent {
    private store : Store = inject(Store);
-   public readonly priceRangeMax : number = 10000;
+   public readonly priceRangeMax : number = 2000;
    public priceRangeFilter$ = this.store.select(selectProductsPriceRangeFilter);
 
    public productPriceRangeFilterChanged($event : MatSliderDragEvent) : void {

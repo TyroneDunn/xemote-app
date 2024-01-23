@@ -194,7 +194,7 @@ const removePriceRangeFilterFromQueryParams = (queryParams : ProductsRequest) =>
          ...queryParams,
          filter: {
             ...(queryParams.filter),
-            priceRange: {start: 0, end: 10000}
+            priceRange: {start: 0, end: 2000}
          }
       }
    }
