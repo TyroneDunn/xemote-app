@@ -9,6 +9,10 @@
       grid-template-columns: 1fr 2fr;
       gap: 2rem;
 
+      .offerings-section-header-title {
+         margin-top: 3rem;
+      }
+
       .offerings-section-quote-container{
          display: flex;
          align-items: center;
