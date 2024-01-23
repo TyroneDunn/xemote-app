@@ -41,4 +41,12 @@ export class ProductsSortComponent {
    protected toggleSortBy(sortByOption : ProductsSortByOption) : void {
       this.store.dispatch(toggleProductsSort({ sortByOption: sortByOption }));
    }
+
+   public formatSortOption(sortByOption : ProductsSortByOption) : string {
+      switch (sortByOption) {
+         case "name": return "Name";
+         case "price": return "Price";
+         case "category": return "Category"
+      }
+   }
 }
