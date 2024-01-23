@@ -1,9 +1,10 @@
 .hero-section-container {
    display: flex;
    flex-direction: column;
-   max-width: 60rem;
+   max-width: 100rem;
    margin: auto;
-   margin-top: 5rem;
+   margin-top: 8%;
+   margin-bottom: 2rem;
 
    .hero-section-content {
       display: flex;
@@ -11,11 +12,23 @@
       gap: 2rem;
       text-align: center;
 
+      .headline {
+         max-width: 80rem;
+         margin-left: auto;
+         margin-right: auto;
+      }
+
+      .divider {
+         max-width: 20rem;
+         margin-bottom: 1rem;
+      }
+
       .hero-actions {
          display: flex;
          flex-direction: row;
          gap: 1rem;
          margin: auto;
+         margin-top: 1rem;
       }
    }
 }
