@@ -17,7 +17,22 @@
    }
 
    .clients {
-      padding-top: 2rem;
-      padding-bottom: 6rem;
+      margin-top: 4rem;
+      margin-bottom: 6rem;
+   }
+
+   .client-cards-container {
+      margin-bottom: 2rem;
+   }
+
+   .client-card {
+      min-height: 6rem;
+      margin-left: 0.5rem;
+      margin-right: 0.5rem;
+   }
+
+   .client-card-content {
+      margin-top: auto;
+      margin-bottom: auto;
    }
 }

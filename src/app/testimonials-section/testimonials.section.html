@@ -32,11 +32,13 @@
          [autoplayInterval]="7000"
       >
          <ng-template let-client pTemplate="item">
-            <div>
-               <div>
-                  <img/>
-                  <h2>{{client}}</h2>
-               </div>
+            <div class="client-cards-container">
+               <mat-card class="client-card">
+                  <div class="client-card-content">
+                     <img/>
+                     <h2>{{client}}</h2>
+                  </div>
+               </mat-card>
             </div>
          </ng-template>
       </p-carousel>
