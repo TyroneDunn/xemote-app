@@ -9,15 +9,20 @@
       />
    </div>
    <mat-card-content>
-      <p class="product-name">{{product.name}}</p>
-      <p class="product-price">{{toCurrencySymbol(product.price.currency)}}{{product.price.price}}</p>
+      <div class="product-card-content">
+         <span>
+            <p class="product-name mat-subtitle-2">{{product.name}}</p>
+            <p
+               class="product-price mat-body-1">{{toCurrencySymbol(product.price.currency)}}{{product.price.price.toFixed(2)
+               | number}}
+            </p>
+         </span>
+         <button
+            class="add-product-to-cart"
+            mat-icon-button
+         >
+            <mat-icon>shopping_cart</mat-icon>
+         </button>
+      </div>
    </mat-card-content>
-   <div class="product-card-actions">
-      <button
-         class="add-product-to-cart"
-         mat-icon-button
-      >
-         <mat-icon>shopping_cart</mat-icon>
-      </button>
-   </div>
 </mat-card>
