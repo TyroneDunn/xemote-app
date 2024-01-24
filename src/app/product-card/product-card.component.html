@@ -1,7 +1,7 @@
 <mat-card class="product-card">
    <div class="product-image-container">
       <img
-         class="product-image"
+         class="product-image clickable"
          alt="{{product.name}} image"
          [ngSrc]="product.imageUrl"
          width="400"
@@ -11,7 +11,7 @@
    <mat-card-content>
       <div class="product-card-content">
          <span>
-            <p class="product-name mat-subtitle-2">{{product.name}}</p>
+            <p class="product-name mat-subtitle-2 clickable">{{product.name}}</p>
             <p
                class="product-price mat-body-1">{{toCurrencySymbol(product.price.currency)}}{{product.price.price.toFixed(2)
                | number}}
