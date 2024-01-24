@@ -1,7 +1,7 @@
 <div class="products-price-range-filter-container">
    <div class="products-price-range-filter-header">
       <h3>Price Range</h3>
-      <p>R{{(priceRangeFilter$ | async)?.start || 0 | number}} -
+      <p class="mat-body-2">R{{(priceRangeFilter$ | async)?.start || 0 | number}} -
          R{{(priceRangeFilter$ | async)?.end || priceRangeMax | number}}</p>
    </div>
    <div class="price-range-slider-container">
