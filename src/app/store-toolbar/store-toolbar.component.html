@@ -1,9 +1,16 @@
-<mat-toolbar>
+<mat-toolbar class="store-toolbar-container">
    <mat-toolbar-row>
       <div class="store-toolbar">
-         <span><h1>Store</h1></span>
+         <span></span>
          <span class="store-toolbar-search"><app-search/></span>
-         <span class="store-toolbar-actions"><button>Checkout</button></span>
+         <span class="store-toolbar-actions">
+            <app-products-sort/>
+            <button
+               mat-icon-button
+               class="checkout-button">
+               <mat-icon>shopping_cart</mat-icon>
+            </button>
+         </span>
       </div>
    </mat-toolbar-row>
 </mat-toolbar>

@@ -1,8 +1,11 @@
+.store-toolbar-container {
+   margin-top: 3rem;
+}
+
 .store-toolbar {
    width: 100%;
    display: grid;
    grid-template-columns: repeat(3, 1fr);
-   align-items: center;
    margin-left: 3rem;
    margin-right: 3rem;
    padding: 0;
@@ -12,6 +15,13 @@
    }
 
    .store-toolbar-actions {
-      text-align: right;
+      display: flex;
+      flex-direction: row;
+      justify-content: end;
+      gap: 1rem;
    }
+}
+
+.checkout-button {
+   margin-top: 0.6rem;
 }
