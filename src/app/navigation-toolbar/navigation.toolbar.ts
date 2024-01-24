@@ -6,7 +6,7 @@ import { SocialLinksComponent } from "../social-links/social-links.component";
 import { HomeActionComponent } from '../home-action/home-action.component';
 
 @Component({
-   selector   : 'app-client-navigation',
+   selector   : 'app-navigation-toolbar',
    standalone : true,
    imports    : [
       CommonModule,
@@ -15,9 +15,9 @@ import { HomeActionComponent } from '../home-action/home-action.component';
       NavigationLinksComponent,
       SocialLinksComponent
    ],
-   templateUrl: './client.navigation.html',
-   styleUrls  : [ './client.navigation.scss' ],
+   templateUrl: './navigation.toolbar.html',
+   styleUrls  : [ './navigation.toolbar.scss' ],
 })
-export class ClientNavigation {
+export class NavigationToolbar {
 
 }

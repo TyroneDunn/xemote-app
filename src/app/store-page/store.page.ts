@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ClientNavigation } from '../client-navigation/client.navigation';
+import { NavigationToolbar } from '../navigation-toolbar/navigation.toolbar';
 import { FooterSection } from '../footer-section/footer.section';
 import { Store } from '@ngrx/store';
 import { ProductsFiltersCardComponent } from '../products-filters-card/products-filters-card.component';
@@ -14,7 +14,7 @@ import { enterStorePage } from './store.page.actions';
   standalone: true,
    imports: [
       CommonModule,
-      ClientNavigation,
+      NavigationToolbar,
       FooterSection,
       ProductsFiltersCardComponent,
       ProductsListComponent,
