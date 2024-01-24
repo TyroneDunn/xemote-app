@@ -2,13 +2,15 @@
    <div class="products-queries">
       <div class="query-and-sort">
          <span>
-            <h3 *ngIf="(query$ | async) && (page$ | async)?.limit != 0">
+            <h3
+               class="query-result"
+               *ngIf="(query$ | async) && (page$ | async)?.limit != 0"
+            >
                {{currentIndexLowerBounds$ | async}}-{{currentIndexUpperBounds$ | async}}
                of {{count$ | async}}
                results for "{{query$ | async}}"
             </h3>
          </span>
-         <app-products-sort/>
       </div>
       <div class="active-filters-container">
          <app-active-products-filters-chip-list/>

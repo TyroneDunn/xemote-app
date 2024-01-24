@@ -1,8 +1,11 @@
-<mat-chip-listbox [disabled]="productsLoading | async">
+<mat-chip-listbox
+   [disabled]="productsLoading | async"
+>
    <mat-chip-option
       selectable="false"
       *ngFor="let filter of (activeCategoryFilters$ | async)"
       [disableRipple]="true"
+      class="active-filter-chip"
    >
       {{filter.category}}
       <button

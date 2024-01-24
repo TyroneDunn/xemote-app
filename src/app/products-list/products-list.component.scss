@@ -13,6 +13,11 @@
          display: flex;
          flex-direction: row;
          justify-content: space-between;
+
+         .query-result {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+         }
       }
    }
 
