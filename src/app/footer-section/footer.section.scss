@@ -14,7 +14,11 @@
 
 
       .footer-section-meta-description {
+         display: flex;
+         flex-direction: column;
+         gap: 1rem;
          padding: 2rem;
+         padding-top: 0;
       }
 
       .footer-section-navigation {
