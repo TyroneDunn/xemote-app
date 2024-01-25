@@ -1,11 +1,17 @@
 <mat-toolbar>
-   <mat-toolbar-row>
+   <mat-toolbar-row *ngIf="!(isMobile$ | async)">
       <div class="app-toolbar">
          <span><app-home-action/></span>
          <span class="spacer"></span>
          <span><app-navigation-links/></span>
          <span class="spacer"></span>
          <span><app-social-links/></span>
+      </div>
+   </mat-toolbar-row>
+   <mat-toolbar-row *ngIf="(isMobile$ | async)">
+      <div class="app-toolbar-mobile">
+         <span><app-home-action/></span>
+         <span><app-navigation-menu/></span>
       </div>
    </mat-toolbar-row>
 </mat-toolbar>
