@@ -1,4 +1,6 @@
-<div class="hero-section-container">
+<div
+   [ngClass]="(isMobile$ | async)? 'hero-section-container-mobile': 'hero-section-container'"
+>
    <div class="hero-section-content">
         <span>
            <h1 class="headline mat-headline-2">The leading name in automatic monitoring and
@@ -28,11 +30,16 @@
          </a>
       </div>
    </div>
-   <div class="hero-image">
+   <div class="hero-image-container">
       <img
+         class="hero-image"
          ngSrc="https://xemoteiot.co.za/wp-content/uploads/2023/10/Home_page_updated_app.png"
-         width="640"
-         height="640"
+         [ngClass]="(isMobile$ | async)? 'hero-image-mobile': 'hero-image'"
+         [width]="(isMobile$ | async) ? 380 : 640"
+         [height]="(isMobile$ | async) ? 380 : 640"
       >
+
+<!--      width="640"-->
+<!--      height="640"-->
    </div>
 </div>
