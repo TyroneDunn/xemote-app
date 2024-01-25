@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatToolbarModule } from "@angular/material/toolbar";
 import { HeroSection } from '../hero-section/hero.section';
@@ -8,6 +8,8 @@ import {
 } from '../testimonials-section/testimonials.section';
 import { NavigationToolbar } from '../navigation-toolbar/navigation.toolbar';
 import { FooterSection } from '../footer-section/footer.section';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs';
 
 @Component({
    selector   : 'app-home-page',
@@ -25,5 +27,8 @@ import { FooterSection } from '../footer-section/footer.section';
    styleUrls  : [ './home.page.scss' ],
 })
 export class HomePage {
-
+   private breakpointObserver = inject(BreakpointObserver);
+   public isMobile$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+      map(value => value.matches)
+   );
 }
