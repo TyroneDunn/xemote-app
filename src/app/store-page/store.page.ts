@@ -8,6 +8,8 @@ import { ProductsListComponent } from '../products-list/products-list.component'
 import { SearchComponent } from '../search/search.component';
 import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component';
 import { enterStorePage } from './store.page.actions';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-store-page',
@@ -26,6 +28,10 @@ import { enterStorePage } from './store.page.actions';
 })
 export class StorePage {
    private store: Store = inject(Store);
+   private breakpointObserver = inject(BreakpointObserver);
+   public isMobile$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+      map(value => value.matches)
+   );
 
    public ngOnInit() : void {
       this.store.dispatch(enterStorePage());
