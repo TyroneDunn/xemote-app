@@ -28,7 +28,7 @@ import { map } from 'rxjs';
 })
 export class HomePage {
    private breakpointObserver = inject(BreakpointObserver);
-   public isMobile$ = this.breakpointObserver.observe(Breakpoints.Handset).pipe(
+   public isMobile$ = this.breakpointObserver.observe([ Breakpoints.XSmall, Breakpoints.Small, Breakpoints.Medium]).pipe(
       map(value => value.matches)
    );
 }
