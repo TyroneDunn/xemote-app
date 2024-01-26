@@ -1,5 +1,7 @@
 <div class="footer-section">
-   <div class="footer-section-content">
+   <!--   <div class="footer-section-content">-->
+   <div [ngClass]="(isMobile$ | async)? 'footer-section-content-mobile': 'footer-section-content'">
+      <span></span>
       <div class="footer-section-meta-description">
          <app-home-action/>
          <p class="mat-body-1">
@@ -8,41 +10,44 @@
             We offer a turnkey solution that is applicable incorporates a wide range of sensing elements and caters to industry specific needs, helping our clients streamline their operations and stay ahead of the curve.
          </p>
       </div>
-      <div class="footer-section-navigation">
-         <h4 class="mat-headline-6">Navigation</h4>
-         <a routerLink="/" class="mat-body-1"><p>Home</p></a>
-         <a routerLink="/store" class="mat-body-1"><p>Store</p></a>
-         <a class="mat-body-1 clickable"><p>Solutions</p></a>
-         <a class="mat-body-1 clickable"><p>Technology Features</p></a>
-         <a class="mat-body-1 clickable"><p>Services</p></a>
-         <a class="mat-body-1 clickable"><p>About Us</p></a>
-         <a class="mat-body-1 clickable"><p>Contact Us</p></a>
-         <a class="mat-body-1 clickable"><p>Careers</p></a>
-         <a class="mat-body-1 clickable"><p>Log In</p></a>
+      <div class="footer-section-links">
+         <div class="footer-section-navigation">
+            <h4 class="mat-headline-6">Navigation</h4>
+            <a routerLink="/" class="mat-body-1"><p>Home</p></a>
+            <a routerLink="/store" class="mat-body-1"><p>Store</p></a>
+            <a class="mat-body-1 clickable"><p>Solutions</p></a>
+            <a class="mat-body-1 clickable"><p>Technology Features</p></a>
+            <a class="mat-body-1 clickable"><p>Services</p></a>
+            <a class="mat-body-1 clickable"><p>About Us</p></a>
+            <a class="mat-body-1 clickable"><p>Contact Us</p></a>
+            <a class="mat-body-1 clickable"><p>Careers</p></a>
+            <a class="mat-body-1 clickable"><p>Log In</p></a>
+         </div>
+         <div class="footer-section-contact">
+            <h4 class="mat-headline-6">Contact Info</h4>
+            <div class="contact-item">
+               <mat-icon>phone</mat-icon>
+               <p class="mat-body-1 contact-item-content">+27 (12) 665 1122</p>
+            </div>
+            <div class="contact-item">
+               <mat-icon>email</mat-icon>
+               <p class="mat-body-1 contact-item-content">info@xemote.co.za</p>
+            </div>
+            <div class="contact-item">
+               <mat-icon>location_on</mat-icon>
+               <p class="mat-body-1 contact-item-content">Building 7, First Floor, <br>Central
+                  Park, 13 Esdoring Nook, <br>Highveld Techno Park, <br>Centurion, 0169</p>
+            </div>
+            <br>
+            <a
+               mat-raised-button
+               color="accent"
+            >
+               Contact Us
+            </a>
+         </div>
       </div>
-      <div class="footer-section-contact">
-         <h4 class="mat-headline-6">Contact Info</h4>
-         <div class="contact-item">
-            <mat-icon>phone</mat-icon>
-            <p class="mat-body-1 contact-item-content">+27 (12) 665 1122</p>
-         </div>
-         <div class="contact-item">
-            <mat-icon>email</mat-icon>
-            <p class="mat-body-1 contact-item-content">info@xemote.co.za</p>
-         </div>
-         <div class="contact-item">
-            <mat-icon>location_on</mat-icon>
-            <p class="mat-body-1 contact-item-content">Building 7, First Floor, <br>Central
-            Park, 13 Esdoring Nook, <br>Highveld Techno Park, <br>Centurion, 0169</p>
-         </div>
-         <br>
-         <a
-            mat-raised-button
-            color="accent"
-         >
-            Contact Us
-         </a>
-      </div>
+      <span></span>
    </div>
    <div class="footer-section-copyright mat-body-1">
       This website is a demo & not for commercial Use | Dunn Atelier | 2024
