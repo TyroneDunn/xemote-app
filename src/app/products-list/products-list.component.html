@@ -25,7 +25,7 @@
       <span></span>
    </div>
    <div
-      class="products-list"
+      [ngClass]="(isMobile$ | async)? 'products-list-mobile': 'products-list'"
       *ngIf="(productsLoading | async) === false"
    >
       <app-product-card

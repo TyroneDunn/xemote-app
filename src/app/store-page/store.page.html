@@ -1,7 +1,7 @@
 <div class="store-page">
    <app-navigation-toolbar [isMobile$]="isMobile$"/>
    <app-store-toolbar [isMobile$]="isMobile$"/>
-   <div class="store-page-content">
+   <div [ngClass]="(isMobile$ | async)? 'store-page-content-mobile': 'store-page-content'">
       <app-products-filters-card *ngIf="!(isMobile$ | async)"/>
       <app-products-list [isMobile$]="isMobile$"/>
    </div>
