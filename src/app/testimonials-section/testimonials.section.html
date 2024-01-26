@@ -1,6 +1,6 @@
-<div class="testimonials-section">
-   <h1 class="mat-headline-2">Testimonials</h1>
+<div [ngClass]="(isMobile$ | async)? 'testimonials-section-mobile': 'testimonials-section'">
    <div class="testimonials">
+      <h1 class="testimonials-title mat-headline-2">Testimonials</h1>
       <p-carousel
          [value]="testimonials"
          [numVisible]="1"

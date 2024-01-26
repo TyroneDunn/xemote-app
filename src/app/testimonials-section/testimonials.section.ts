@@ -71,14 +71,6 @@ export class TestimonialsSection {
          company: 'Mays Chemists Melville'
       },
       {
-         author: 'C May',
-         image: 'https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.eikonphoto.com%2Fwp-content%2Fuploads%2F2017%2F03%2Fmale-headshot-tie-color-e1515795186596.jpg&f=1&nofb=1&ipt=f1b1f4c04ca97a82bed5a09f22de8c4a7f0c98a97717466c94b4cf875c208809&ipo=images',
-         message: 'Our core business relies heavily on a continuous cold chain from raw materials to the final product. Having numerous fridges and freezers on-site, any maintenance manager’s worst nightmare would be finding a fridge or freezer off, and the product has started to defrost. Before installing the Xemote system, we learnt a hard and expensive lesson. With the sensors in place monitoring has become so much easier, we receive daily snapshots of temperatures and can view live readings of temperatures on my dashboard. Pull reports of different fridges temperatures. Receive emails and SMS’s when temperatures exceed band settings. And with just monitoring the temperatures, I can judge the performance of my compressors and have planned my schedule maintenance accordingly.\n' +
-            '\n' +
-            'The client service I receive from Xemote is just brilliant, they so on the ball, that they keep me on my toes. Since the beginning, they were always just a phone call or email away and would solve any problem efficiently and effectively.',
-         company: 'In2Food'
-      },
-      {
          author: 'W Pienaar',
          image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F15%2F97%2Ff8%2F1597f8551eb52d585f9e4779018b448a.png&f=1&nofb=1&ipt=3a4dc3b53b138e1dc1319ad4070f7b4711e11d6b889c35984e1deb5e4f0644a5&ipo=images',
          message: 'We have nothing but praise for the staff and performance of Xemote. All of our queries are always answered and attended to promptly and with professionalism. I can, under all circumstances, praise and rely on great service. It is such a privilege to deal with a professional and efficient company and would recommend their services to every person or company interested in their products!',
