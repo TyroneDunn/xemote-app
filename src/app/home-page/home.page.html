@@ -1,6 +1,6 @@
 <div class="home-page">
    <app-navigation-toolbar [isMobile$]="isMobile$"/>
-   <div class="home-page-content">
+   <div [ngClass]="(isMobile$ | async)? 'home-page-content-mobile': 'home-page-content'">
       <app-hero-section [isMobile$]="isMobile$"/>
       <app-offerings-section [isMobile$]="isMobile$"/>
       <app-testimonials-section/>
