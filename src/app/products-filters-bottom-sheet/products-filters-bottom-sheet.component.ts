@@ -1,6 +1,5 @@
-import { Component, inject } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import {
    ProductsCategoryFiltersComponent
 } from '../products-category-filters/products-category-filters.component';
@@ -14,10 +13,16 @@ import { MatDividerModule } from '@angular/material/divider';
 @Component({
   selector: 'app-products-filters-bottom-sheet',
   standalone: true,
-   imports: [ CommonModule, ProductsCategoryFiltersComponent, ProductsPriceRangeFilterComponent, ProductsSortMenu, ProductsSortChipsComponent, MatDividerModule ],
+   imports: [
+      CommonModule,
+      ProductsCategoryFiltersComponent,
+      ProductsPriceRangeFilterComponent,
+      ProductsSortMenu,
+      ProductsSortChipsComponent,
+      MatDividerModule
+   ],
   templateUrl: './products-filters-bottom-sheet.component.html',
   styleUrls: ['./products-filters-bottom-sheet.component.scss']
 })
 export class ProductsFiltersBottomSheet {
-   private bottomSheetRef = inject(MatBottomSheetRef<ProductsFiltersBottomSheet>);
 }

@@ -4,8 +4,9 @@ import { MatChipsModule } from '@angular/material/chips';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import {
-   selectActiveProductsCategoryFilters, selectProductsLoading,
-   selectProductsPriceRangeFilter, selectProductsSort,
+   selectActiveProductsCategoryFilters,
+   selectProductsLoading,
+   selectProductsPriceRangeFilter,
 } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { ProductCategory, ProductCategoryFilter } from '../product/product.types';
@@ -17,7 +18,11 @@ import {
 @Component({
    selector   : 'app-active-products-filters-chip-list',
    standalone : true,
-   imports    : [ CommonModule, MatChipsModule, MatIconModule ],
+   imports    : [
+      CommonModule,
+      MatChipsModule,
+      MatIconModule
+   ],
    templateUrl: './active-products-filters-chip-list.component.html',
    styleUrls  : [ './active-products-filters-chip-list.component.scss' ],
 })
