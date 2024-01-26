@@ -1,8 +1,9 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CarouselModule } from 'primeng/carousel';
 import { MatCardModule } from '@angular/material/card';
 import { AvatarModule } from 'primeng/avatar';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-testimonials-section',
@@ -12,6 +13,7 @@ import { AvatarModule } from 'primeng/avatar';
   styleUrls: ['./testimonials.section.scss']
 })
 export class TestimonialsSection {
+   @Input() isMobile$: Observable<boolean> = of(false);
    public testimonials = [
       {
          author: 'S Eksteen',
@@ -119,4 +121,8 @@ export class TestimonialsSection {
          company: 'Total Funeral Logistics'
       },
    ];
+   public clients = ['The Local Choice', 'IoT.nxt', 'Nibbly bits', 'Rhodes Food Group', 'Intenda',
+      'in2Juice', 'Garon Specialties', 'in2Food', 'Ambasaam', 'Aramex', 'Winelands Pork',
+      'Comafrica', 'Arrie Nel Pharmacy Group', 'Sir Fruit', 'Agency for Food Safety',
+      'Total Funeral Logistics'];
 }

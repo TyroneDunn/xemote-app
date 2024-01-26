@@ -3,7 +3,7 @@
    <div [ngClass]="(isMobile$ | async)? 'home-page-content-mobile': 'home-page-content'">
       <app-hero-section [isMobile$]="isMobile$"/>
       <app-offerings-section [isMobile$]="isMobile$"/>
-      <app-testimonials-section/>
+      <app-testimonials-section [isMobile$]="isMobile$"/>
    </div>
    <app-footer-section/>
 </div>

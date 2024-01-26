@@ -7,6 +7,7 @@
          [numScroll]="1"
          [circular]="true"
          [autoplayInterval]="7000"
+         [showIndicators]="false"
       >
          <ng-template let-testimonial pTemplate="item">
             <div class="testimonial-content">
@@ -30,21 +31,38 @@
    <div class="clients">
       <h1 class="mat-headline-2">Our Partners</h1>
       <p-carousel
-         [value]="['The Local Choice', 'IoT.nxt', 'Nibbly bits', 'Rhodes Food Group', 'Intenda',
-         'in2Juice', 'Garon Specialties', 'in2Food', 'Ambasaam', 'Aramex', 'Winelands Pork',
-         'Comafrica', 'Arrie Nel Pharmacy Group', 'Sir Fruit', 'Agency for Food Safety',
-         'Total Funeral Logistics']"
+         *ngIf="!(isMobile$ | async)"
+         [value]="clients"
          [numVisible]="5"
          [numScroll]="1"
          [circular]="true"
          [autoplayInterval]="7000"
+         [showIndicators]="false"
       >
          <ng-template let-client pTemplate="item">
             <div class="client-cards-container">
                <mat-card class="client-card">
                   <div class="client-card-content">
-                     <img/>
                      <h2>{{client}}</h2>
+                  </div>
+               </mat-card>
+            </div>
+         </ng-template>
+      </p-carousel>
+      <p-carousel
+         *ngIf="(isMobile$ | async)"
+         [value]="clients"
+         [numVisible]="1"
+         [numScroll]="1"
+         [circular]="true"
+         [autoplayInterval]="4000"
+         [showIndicators]="false"
+      >
+         <ng-template let-client pTemplate="item">
+            <div class="client-cards-container">
+               <mat-card class="client-card">
+                  <div class="client-card-content">
+                     <h2 class="mat-headline-5">{{client}}</h2>
                   </div>
                </mat-card>
             </div>

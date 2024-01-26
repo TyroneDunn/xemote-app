@@ -2,7 +2,8 @@
    display: flex;
    flex-direction: column;
    text-align: center;
-   margin: 3rem;
+   margin-top: 3rem;
+   margin-bottom: 3rem;
    gap: 3rem;
 
    .testimonials {
@@ -16,16 +17,13 @@
       max-width: 80rem;
       padding-left: 2rem;
       padding-right: 2rem;
-      margin: auto
+      margin-left: auto;
+      margin-right: auto;
    }
 
    .clients {
-      margin-top: 6rem;
-      margin-bottom: 6rem;
-   }
-
-   .client-cards-container {
-      margin-bottom: 2rem;
+      margin-top: 2rem;
+      margin-bottom: 12rem;
    }
 
    .client-card {
@@ -35,6 +33,7 @@
    }
 
    .client-card-content {
+      padding-top: 1rem;
       margin-top: auto;
       margin-bottom: auto;
    }
