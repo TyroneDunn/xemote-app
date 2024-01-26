@@ -1,9 +1,9 @@
 <div class="store-page">
    <app-navigation-toolbar [isMobile$]="isMobile$"/>
-   <app-store-toolbar/>
+   <app-store-toolbar [isMobile$]="isMobile$"/>
    <div class="store-page-content">
-      <app-products-filters-card/>
-      <app-products-list/>
+      <app-products-filters-card *ngIf="!(isMobile$ | async)"/>
+      <app-products-list [isMobile$]="isMobile$"/>
    </div>
    <app-footer-section [isMobile$]="isMobile$"/>
 </div>

@@ -1,13 +1,26 @@
 <mat-toolbar class="store-toolbar-container">
-   <mat-toolbar-row>
+   <mat-toolbar-row *ngIf="!(isMobile$ | async)">
       <div class="store-toolbar">
          <span></span>
          <span class="store-toolbar-search"><app-search/></span>
          <span class="store-toolbar-actions">
             <app-products-sort/>
-            <button
-               mat-icon-button
-               class="checkout-button">
+            <button mat-icon-button>
+               <mat-icon>shopping_cart</mat-icon>
+            </button>
+         </span>
+      </div>
+   </mat-toolbar-row>
+   <mat-toolbar-row *ngIf="isMobile$ | async">
+      <div class="store-toolbar-mobile">
+         <span class="store-toolbar-search"><app-search/></span>
+      </div>
+   </mat-toolbar-row>
+   <mat-toolbar-row *ngIf="isMobile$ | async">
+      <div class="store-toolbar-mobile">
+         <span class="store-toolbar-actions">
+            <app-products-sort/>
+            <button mat-icon-button>
                <mat-icon>shopping_cart</mat-icon>
             </button>
          </span>

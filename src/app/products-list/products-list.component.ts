@@ -1,6 +1,6 @@
-import { Component, inject } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { combineLatestWith, map, Observable } from 'rxjs';
+import { combineLatestWith, map, Observable, of } from 'rxjs';
 import { Product } from '../product/product.types';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -34,6 +34,7 @@ import { pageProducts } from './products-list.actions';
   styleUrls: ['./products-list.component.scss']
 })
 export class ProductsListComponent {
+   @Input() isMobile$: Observable<boolean> = of(false);
    private store: Store = inject(Store);
    public products$: Observable<Product[]> = this.store.select(selectProductsCollection);
    public count$: Observable<number> = this.store.select(selectProductsCount);

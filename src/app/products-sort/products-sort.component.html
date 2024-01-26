@@ -3,25 +3,29 @@
    *ngIf="(sort$ | async) !== undefined"
 >
    <span>
-      <p class="sort-by-label mat-body-1">Sort By:</p>
+      <p class="sort-by-label mat-body-1">Sort:</p>
    </span>
    <span>
-      <mat-form-field appearance="outline">
-         <div class="sort-by-form-container">
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [matMenuTriggerFor]="menu"
+      >
+         {{formatSortOption((sort$ | async)?.field)}}
+         <button
+            matChipRemove
+         >
             <mat-icon>{{orderByIcon((sort$ | async)?.order)}}</mat-icon>
-            <mat-select
-               hideSingleSelectionIndicator="true"
-               [value]="(sort$ | async)?.field"
+         </button>
+         <mat-menu #menu="matMenu">
+            <button
+               mat-menu-item
+               *ngFor="let sortByOption of productSortByOptions"
+               (click)="toggleSortBy(sortByOption)"
             >
-               <mat-option
-                  [value]="sortByOption"
-                  *ngFor="let sortByOption of productSortByOptions"
-                  (click)="toggleSortBy(sortByOption)"
-               >
-                  {{formatSortOption(sortByOption)}}
-               </mat-option>
-            </mat-select>
-         </div>
-      </mat-form-field>
+               {{formatSortOption(sortByOption)}}
+            </button>
+         </mat-menu>
+      </mat-chip-option>
    </span>
 </div>
