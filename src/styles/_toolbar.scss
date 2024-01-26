@@ -16,7 +16,6 @@
   align-items: center;
 }
 
-// todo : update naming
 .title-toolbar-home-action {
   display: grid;
   place-content: center;
@@ -31,10 +30,4 @@
 .toolbar-action {
   margin-left: 2px;
   margin-right: 6px;
-}
-
-.toolbar-search {
-  .mat-mdc-form-field {
-    height: 50px;
-  }
 }
