@@ -53,6 +53,10 @@ export class ProductEffects {
                         ? negateOrder(queryParams.sort.order)
                         : "asc",
                   },
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             })))
       ));
@@ -69,6 +73,10 @@ export class ProductEffects {
                      field: action.productsSort.field,
                      order: action.productsSort.order
                   },
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             })))
       ));
@@ -80,7 +88,11 @@ export class ProductEffects {
          switchMap(([action, queryParams]) =>
             of(loadProducts({
                getProductsRequest: {
-                  ...toggleCategoryFilterActive(queryParams, action.category)
+                  ...toggleCategoryFilterActive(queryParams, action.category),
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             })))
       ));
@@ -92,7 +104,11 @@ export class ProductEffects {
          switchMap(([action, queryParams]) => {
             return of(loadProducts({
                getProductsRequest: {
-                  ...removeCategoryFilterFromQueryParams(queryParams, action.category)
+                  ...removeCategoryFilterFromQueryParams(queryParams, action.category),
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             }));
          })
@@ -107,6 +123,10 @@ export class ProductEffects {
             of(loadProducts({
                getProductsRequest: {
                   ...replaceProductsPriceRangeFilter(queryParams, action.priceRange),
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             }))),
       ));
@@ -119,6 +139,10 @@ export class ProductEffects {
             of(loadProducts({
                getProductsRequest: {
                   ...removePriceRangeFilterFromQueryParams(queryParams),
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             }))),
       ));
@@ -143,6 +167,10 @@ export class ProductEffects {
             of(loadProducts({
                getProductsRequest: {
                   ...updateProductsQuery(queryParams, action.query),
+                  page: {
+                     index: 0,
+                     limit: queryParams.page.limit
+                  }
                },
             }))),
       )

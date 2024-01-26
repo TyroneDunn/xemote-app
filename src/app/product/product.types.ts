@@ -30,7 +30,7 @@ export type ProductCategory =
 export type ProductsRequest = {
    filter?: ProductsFilter,
    sort?: ProductsSort,
-   page?: Page,
+   page: Page,
 };
 
 export type ProductCategoryFilter = { category: ProductCategory, active: boolean };
