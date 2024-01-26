@@ -14,15 +14,15 @@
    <mat-toolbar-row *ngIf="isMobile$ | async">
       <div class="store-toolbar-mobile">
          <span class="store-toolbar-search"><app-search/></span>
+         <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+         </button>
       </div>
    </mat-toolbar-row>
    <mat-toolbar-row *ngIf="isMobile$ | async">
       <div class="store-toolbar-mobile">
          <span class="store-toolbar-actions">
             <app-products-sort/>
-            <button mat-icon-button>
-               <mat-icon>shopping_cart</mat-icon>
-            </button>
          </span>
       </div>
    </mat-toolbar-row>
