@@ -1,11 +1,11 @@
-import { Component, inject, Input } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { MatOptionModule } from '@angular/material/core';
 import { MatSelectModule } from '@angular/material/select';
 import { Store } from '@ngrx/store';
 import { selectProductsSort } from '../products-state/products-state.selectors';
-import { Observable, of } from 'rxjs';
+import { Observable } from 'rxjs';
 import { Order } from '../shared/order.type';
 import { ProductsSortByOption, productSortByOptions, ProductsSort } from '../product/product.types';
 import { toggleProductsSort } from './products-sort.actions';
