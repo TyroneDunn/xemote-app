@@ -21,6 +21,30 @@
             margin: auto;
          }
       }
+
+   }
+
+   .offerings-section-header-mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+
+
+      .offerings-section-header-title {
+         margin-top: 3rem;
+         text-align: center;
+      }
+
+      .offerings-section-quote-container{
+         display: flex;
+         align-items: center;
+         margin-bottom: 4rem;
+
+         .offerings-section-quote {
+            margin: auto;
+            margin-top: 1rem;
+         }
+      }
    }
 
    .offerings-section-content {
@@ -29,25 +53,55 @@
       gap: 1rem;
       margin-left: 2rem;
       margin-right: 2rem;
+
+      .offerings-card-container {
+         margin-left: 1rem;
+         margin-right: 1rem;
+      }
+
+      .offerings-card-header {
+         margin-bottom: 1rem;
+      }
+
+      .offerings-card-title {
+         margin-top: 1rem;
+         display: flex;
+         flex-direction: row;
+         gap: 1rem;
+      }
+
+      .offerings-card-content {
+         text-align: left;
+      }
    }
 
-   .offerings-card-container {
-      margin-left: 1rem;
-      margin-right: 1rem;
-   }
-
-   .offerings-card-header {
-      margin-bottom: 1rem;
-   }
-
-   .offerings-card-title {
-      margin-top: 1rem;
+   .offerings-section-content-mobile {
       display: flex;
-      flex-direction: row;
-      gap: 1rem;
+      flex-direction: column;
+      gap: 2rem;
+      margin-left: 2rem;
+      margin-right: 2rem;
+
+      .offerings-card-container {
+         margin-left: 1rem;
+         margin-right: 1rem;
+      }
+
+      .offerings-card-header {
+         margin-bottom: 1rem;
+         justify-content: center;
+      }
+
+      .offerings-card-title {
+         margin-top: 1rem;
+         display: flex;
+         flex-direction: row;
+         gap: 1rem;
+      }
+
+      .offerings-card-content {
+         text-align: left;
+      }
    }
 
-   .offerings-card-content {
-      text-align: left;
-   }
 }

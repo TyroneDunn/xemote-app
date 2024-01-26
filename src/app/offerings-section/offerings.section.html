@@ -1,5 +1,8 @@
 <div class="offerings-section-container">
-   <div class="offerings-section-header">
+   <div
+      [ngClass]="(isMobile$ | async)? 'offerings-section-header-mobile': 'offerings-section-header'"
+   >
+
       <div class="offerings-section-header-title">
          <h1 class="mat-headline-3">Why Xemote?<br>It Just Works!</h1>
       </div>
@@ -9,7 +12,9 @@
          </div>
       </div>
    </div>
-   <div class="offerings-section-content">
+   <div
+      [ngClass]="(isMobile$ | async)? 'offerings-section-content-mobile': 'offerings-section-content'"
+   >
       <mat-card>
          <div class="offerings-card-container">
             <mat-card-header class="offerings-card-header">

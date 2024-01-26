@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { Observable, of } from 'rxjs';
 
 @Component({
   selector: 'app-offerings-section',
@@ -11,5 +12,5 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./offerings.section.scss']
 })
 export class OfferingsSection {
-
+   @Input() isMobile$: Observable<boolean> = of(false);
 }
