@@ -8,13 +8,13 @@ import { selectProductsSort } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { Order } from '../shared/order.type';
 import { ProductsSortByOption, productSortByOptions, ProductsSort } from '../product/product.types';
-import { toggleProductsSort } from './products-sort.actions';
+import { toggleProductsSort } from './products-sort-menu.actions';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatMenuModule } from '@angular/material/menu';
 import { RouterLink } from '@angular/router';
 
 @Component({
-   selector   : 'app-products-sort',
+   selector   : 'app-products-sort-menu',
    standalone : true,
    imports: [
       CommonModule,
@@ -25,10 +25,10 @@ import { RouterLink } from '@angular/router';
       MatMenuModule,
       RouterLink,
    ],
-   templateUrl: './products-sort.component.html',
-   styleUrls  : [ './products-sort.component.scss' ],
+   templateUrl: './products-sort-menu.component.html',
+   styleUrls  : [ './products-sort-menu.component.scss' ],
 })
-export class ProductsSortComponent {
+export class ProductsSortMenu {
    protected readonly productSortByOptions : ProductsSortByOption[] = productSortByOptions;
    private readonly store : Store = inject(Store);
    protected readonly sort$ : Observable<ProductsSort | undefined> =

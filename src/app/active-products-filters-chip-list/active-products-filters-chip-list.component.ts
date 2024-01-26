@@ -5,7 +5,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import {
    selectActiveProductsCategoryFilters, selectProductsLoading,
-   selectProductsPriceRangeFilter,
+   selectProductsPriceRangeFilter, selectProductsSort,
 } from '../products-state/products-state.selectors';
 import { Observable } from 'rxjs';
 import { ProductCategory, ProductCategoryFilter } from '../product/product.types';

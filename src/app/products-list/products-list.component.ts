@@ -13,7 +13,7 @@ import {
    selectProductsQuery,
 } from '../products-state/products-state.selectors';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
-import { ProductsSortComponent } from '../products-sort/products-sort.component';
+import { ProductsSortMenu } from '../products-sort-menu/products-sort-menu.component';
 import {
    ActiveProductsFiltersChipListComponent
 } from '../active-products-filters-chip-list/active-products-filters-chip-list.component';
@@ -24,7 +24,7 @@ import { pageProducts } from './products-list.actions';
   standalone: true,
    imports: [
       CommonModule,
-      ProductsSortComponent,
+      ProductsSortMenu,
       ActiveProductsFiltersChipListComponent,
       MatProgressSpinnerModule,
       ProductCardComponent,

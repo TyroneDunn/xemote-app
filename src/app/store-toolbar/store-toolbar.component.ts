@@ -1,11 +1,17 @@
-import { Component, Input } from '@angular/core';
+import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SearchComponent } from '../search/search.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { ProductsSortComponent } from '../products-sort/products-sort.component';
+import { ProductsSortMenu } from '../products-sort-menu/products-sort-menu.component';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Observable, of } from 'rxjs';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatBottomSheet, MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import {
+   ProductsFiltersBottomSheet
+} from '../products-filters-bottom-sheet/products-filters-bottom-sheet.component';
+import { MatInputModule } from '@angular/material/input';
 
 @Component({
   selector: 'app-store-toolbar',
@@ -14,13 +20,21 @@ import { Observable, of } from 'rxjs';
       CommonModule,
       SearchComponent,
       MatToolbarModule,
-      ProductsSortComponent,
+      ProductsSortMenu,
       MatButtonModule,
       MatIconModule,
+      MatChipsModule,
+      MatBottomSheetModule,
+      MatInputModule,
    ],
   templateUrl: './store-toolbar.component.html',
   styleUrls: ['./store-toolbar.component.scss']
 })
 export class StoreToolbarComponent {
    @Input() isMobile$: Observable<boolean> = of(false);
+   private productsFiltersBottomSheet = inject(MatBottomSheet);
+
+   public openProductsFiltersBottomSheet() : void {
+      this.productsFiltersBottomSheet.open(ProductsFiltersBottomSheet);
+   }
 }

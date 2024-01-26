@@ -1,32 +1,34 @@
 <mat-chip-listbox
    [disabled]="productsLoading | async"
 >
-   <mat-chip-option
-      selectable="false"
-      *ngFor="let filter of (activeCategoryFilters$ | async)"
-      [disableRipple]="true"
-      class="active-filter-chip"
-   >
-      {{filter.category}}
-      <button
-         matChipRemove
-         (click)="removeCategoryFilter(filter.category)"
+   <div class="active-filter-chips-container">
+      <mat-chip-option
+         selectable="false"
+         *ngFor="let filter of (activeCategoryFilters$ | async)"
+         [disableRipple]="true"
+         class="active-filter-chip"
       >
-         <mat-icon>close</mat-icon>
-      </button>
-   </mat-chip-option>
-   <mat-chip-option
-      *ngIf="((activePriceRangeFilter$ | async)?.start != 0) || ((activePriceRangeFilter$ |
+         {{filter.category}}
+         <button
+            matChipRemove
+            (click)="removeCategoryFilter(filter.category)"
+         >
+            <mat-icon>close</mat-icon>
+         </button>
+      </mat-chip-option>
+      <mat-chip-option
+         *ngIf="((activePriceRangeFilter$ | async)?.start != 0) || ((activePriceRangeFilter$ |
          async)?.end != 2000)"
-      selectable="false"
-      [disableRipple]="true"
-   >
-      R{{(activePriceRangeFilter$ | async)?.start}} - R{{(activePriceRangeFilter$ | async)?.end}}
-      <button
-         matChipRemove
-         (click)="removePriceRangeFilter()"
+         selectable="false"
+         [disableRipple]="true"
       >
-         <mat-icon>close</mat-icon>
-      </button>
-   </mat-chip-option>
+         R{{(activePriceRangeFilter$ | async)?.start}} - R{{(activePriceRangeFilter$ | async)?.end}}
+         <button
+            matChipRemove
+            (click)="removePriceRangeFilter()"
+         >
+            <mat-icon>close</mat-icon>
+         </button>
+      </mat-chip-option>
+   </div>
 </mat-chip-listbox>

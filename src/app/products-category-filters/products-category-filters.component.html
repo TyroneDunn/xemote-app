@@ -1,5 +1,5 @@
 <div class="products-category-filters-container">
-   <h3>Category</h3>
+   <h3 class="mat-headline-6">Categories</h3>
    <mat-checkbox
       *ngFor="let filter of categoryFilters"
       [disabled]="(this.productsLoading$ | async) == true"

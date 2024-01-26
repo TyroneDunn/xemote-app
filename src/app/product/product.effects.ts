@@ -5,7 +5,7 @@ import { of, switchMap, withLatestFrom } from 'rxjs';
 import { loadProducts } from './product.actions.type';
 import { Store } from '@ngrx/store';
 import { selectProductsQueryParams } from '../products-state/products-state.selectors';
-import { toggleProductsSort } from '../products-sort/products-sort.actions';
+import { toggleProductsSort } from '../products-sort-menu/products-sort-menu.actions';
 import { negateOrder } from '../shared/order.utility';
 import { ProductCategory, ProductsRequest } from './product.types';
 import {
@@ -22,6 +22,7 @@ import {
 import { pageProducts } from '../products-list/products-list.actions';
 import { Page } from '../shared/page.type';
 import { searchProducts } from '../search/search.actions';
+import { sortProducts } from '../products-sort-chips/products-sort-chips.actions';
 
 @Injectable({
   providedIn: 'root'
@@ -38,7 +39,7 @@ export class ProductEffects {
             of(loadProducts({ getProductsRequest : queryParams }))),
       ));
 
-   private readonly loadSortedProducts = createEffect(() =>
+   private readonly toggleProductsSortAndLoadSortedProducts = createEffect(() =>
       this.actions$.pipe(
          ofType(toggleProductsSort),
          withLatestFrom(this.store.select(selectProductsQueryParams)),
@@ -53,7 +54,23 @@ export class ProductEffects {
                         : "asc",
                   },
                },
-            }))),
+            })))
+      ));
+
+   private readonly loadSortedProducts = createEffect(() =>
+      this.actions$.pipe(
+         ofType(sortProducts),
+         withLatestFrom(this.store.select(selectProductsQueryParams)),
+         switchMap(([action, queryParams]) =>
+            of(loadProducts({
+               getProductsRequest: {
+                  ...queryParams,
+                  sort: {
+                     field: action.productsSort.field,
+                     order: action.productsSort.order
+                  },
+               },
+            })))
       ));
 
    private readonly loadProductsFilteredByCategory = createEffect(() =>

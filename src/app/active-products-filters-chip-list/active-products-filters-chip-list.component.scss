@@ -1,3 +1,9 @@
+.active-filter-chips-container {
+   display: flex;
+   flex-direction: row;
+   overflow-x: auto;
+}
+
 .active-filter-chip {
    margin-bottom: 1rem !important;
 }

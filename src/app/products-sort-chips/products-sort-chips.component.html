@@ -1,0 +1,67 @@
+<div class="products-sort-chips-container">
+   <h3 class="mat-headline-6">Sort By</h3>
+   <mat-chip-listbox
+      [disabled]="productsLoading | async"
+   >
+      <mat-chip-option
+         selectable="false"
+         [selected]="selected({field: 'name', order: 'asc'}) | async"
+         [disableRipple]="true"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByNameAsc()"
+      >
+         Name: ascending
+      </mat-chip-option>
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [selected]="selected({field: 'name', order: 'desc'}) | async"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByNameDesc()"
+      >
+         Name: descending
+      </mat-chip-option>
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [selected]="selected({field: 'price', order: 'asc'}) | async"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByPriceAsc()"
+      >
+         Price: ascending
+      </mat-chip-option>
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [selected]="selected({field: 'price', order: 'desc'}) | async"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByPriceDesc()"
+      >
+         Price: descending
+      </mat-chip-option>
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [selected]="selected({field: 'category', order: 'asc'}) | async"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByCategoryAsc()"
+      >
+         Category: ascending
+      </mat-chip-option>
+      <mat-chip-option
+         selectable="false"
+         [disableRipple]="true"
+         [selected]="selected({field: 'category', order: 'desc'}) | async"
+         color="accent"
+         class="active-filter-chip"
+         (click)="sortProductsByCategoryDesc()"
+      >
+         Category: descending
+      </mat-chip-option>
+   </mat-chip-listbox>
+</div>

@@ -4,7 +4,7 @@
          <span></span>
          <span class="store-toolbar-search"><app-search/></span>
          <span class="store-toolbar-actions">
-            <app-products-sort/>
+            <app-products-sort-menu/>
             <button mat-icon-button>
                <mat-icon>shopping_cart</mat-icon>
             </button>
@@ -21,9 +21,16 @@
    </mat-toolbar-row>
    <mat-toolbar-row *ngIf="isMobile$ | async">
       <div class="store-toolbar-mobile">
-         <span class="store-toolbar-actions">
-            <app-products-sort/>
-         </span>
+         <div class="store-toolbar-filters">
+            <button
+               mat-raised-button
+               [disableRipple]="true"
+               (click)="openProductsFiltersBottomSheet()"
+            >
+               Filters
+               <mat-icon>expand_more</mat-icon>
+            </button>
+         </div>
       </div>
    </mat-toolbar-row>
 </mat-toolbar>
