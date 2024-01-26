@@ -12,7 +12,6 @@ import {
    selectProductsPage,
    selectProductsQuery,
 } from '../products-state/products-state.selectors';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { ProductsSortMenu } from '../products-sort-menu/products-sort-menu.component';
 import {
    ActiveProductsFiltersChipListComponent
@@ -26,7 +25,6 @@ import { pageProducts } from './products-list.actions';
       CommonModule,
       ProductsSortMenu,
       ActiveProductsFiltersChipListComponent,
-      MatProgressSpinnerModule,
       ProductCardComponent,
       MatPaginatorModule,
    ],

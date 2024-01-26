@@ -17,14 +17,6 @@
       </div>
    </div>
    <div
-      class="loading-indicator"
-      *ngIf="(productsLoading | async) !== false"
-   >
-      <span></span>
-      <mat-progress-spinner mode="indeterminate"/>
-      <span></span>
-   </div>
-   <div
       [ngClass]="(isMobile$ | async)? 'products-list-mobile': 'products-list'"
       *ngIf="(productsLoading | async) === false"
    >

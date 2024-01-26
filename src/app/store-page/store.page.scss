@@ -12,3 +12,11 @@
    margin-left: 2rem;
    margin-right: 2rem;
 };
+
+.loading-indicator {
+   top: 0;
+   left: 0;
+   position: fixed;
+   z-index: 999;
+   width: 100vw;
+}
