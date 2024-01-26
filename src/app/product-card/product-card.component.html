@@ -11,9 +11,10 @@
    <mat-card-content>
       <div class="product-card-content">
          <span>
-            <p class="product-name mat-subtitle-2 clickable">{{product.name}}</p>
+            <p class="product-name mat-subtitle-1 clickable">{{product.name}}</p>
             <p
-               class="product-price mat-body-1">{{toCurrencySymbol(product.price.currency)}}{{product.price.price.toFixed(2)
+               class="product-price mat-body-1">
+               {{toCurrencySymbol(product.price.currency)}}{{product.price.price.toFixed(2)
                | number}}
             </p>
          </span>
