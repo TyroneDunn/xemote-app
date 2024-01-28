@@ -7,12 +7,12 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
-import { searchProducts } from './search.actions';
+import { searchProducts } from './products-search.actions';
 import { debounceTime, first, Subscription } from 'rxjs';
 import { selectProductsQuery } from '../products-state/products-state.selectors';
 
 @Component({
-   selector: 'app-search',
+   selector: 'app-products-search',
    standalone: true,
    imports: [
       CommonModule,
@@ -23,10 +23,10 @@ import { selectProductsQuery } from '../products-state/products-state.selectors'
       MatTooltipModule,
       MatIconModule
    ],
-   templateUrl: './search.component.html',
-   styleUrls: [ './search.component.scss' ],
+   templateUrl: './products-search.component.html',
+   styleUrls: [ './products-search.component.scss' ],
 })
-export class SearchComponent {
+export class ProductsSearchComponent {
    private store: Store = inject(Store);
    private formBuilder: FormBuilder = inject(FormBuilder);
    public searchForm: FormGroup = this.formBuilder.nonNullable.group({

@@ -21,7 +21,7 @@ import {
 } from '../active-products-filters-chip-list/active-products-filters-chip-list.actions';
 import { pageProducts } from '../products-list/products-list.actions';
 import { Page } from '../shared/page.type';
-import { searchProducts } from '../search/search.actions';
+import { searchProducts } from '../products-search/products-search.actions';
 import { sortProducts } from '../products-sort-chips/products-sort-chips.actions';
 
 @Injectable({

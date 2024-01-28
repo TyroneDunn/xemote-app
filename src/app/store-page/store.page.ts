@@ -5,7 +5,7 @@ import { FooterSection } from '../footer-section/footer.section';
 import { Store } from '@ngrx/store';
 import { ProductsFiltersCardComponent } from '../products-filters-card/products-filters-card.component';
 import { ProductsListComponent } from '../products-list/products-list.component';
-import { SearchComponent } from '../search/search.component';
+import { ProductsSearchComponent } from '../products-search/products-search.component';
 import { StoreToolbarComponent } from '../store-toolbar/store-toolbar.component';
 import { enterStorePage } from './store.page.actions';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
@@ -22,7 +22,7 @@ import { selectProductsLoading } from '../products-state/products-state.selector
       FooterSection,
       ProductsFiltersCardComponent,
       ProductsListComponent,
-      SearchComponent,
+      ProductsSearchComponent,
       StoreToolbarComponent,
       MatProgressBarModule,
    ],

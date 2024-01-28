@@ -1,6 +1,6 @@
 import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SearchComponent } from '../search/search.component';
+import { ProductsSearchComponent } from '../products-search/products-search.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { ProductsSortMenu } from '../products-sort-menu/products-sort-menu.component';
 import { MatButtonModule } from '@angular/material/button';
@@ -18,7 +18,7 @@ import { MatInputModule } from '@angular/material/input';
   standalone: true,
    imports: [
       CommonModule,
-      SearchComponent,
+      ProductsSearchComponent,
       MatToolbarModule,
       ProductsSortMenu,
       MatButtonModule,
