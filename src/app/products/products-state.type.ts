@@ -2,7 +2,7 @@ import {
    Product,
    ProductsFilter,
    ProductsSort,
-} from '../product/product.types';
+} from './product.types';
 import { Page } from '../shared/page.type';
 
 export type ProductsState = {

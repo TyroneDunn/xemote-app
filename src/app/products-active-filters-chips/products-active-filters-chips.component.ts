@@ -7,26 +7,26 @@ import {
    selectActiveProductsCategoryFilters,
    selectProductsLoading,
    selectProductsPriceRangeFilter,
-} from '../products-state/products-state.selectors';
+} from '../products/products-state.selectors';
 import { Observable } from 'rxjs';
-import { ProductCategory, ProductCategoryFilter } from '../product/product.types';
+import { ProductCategory, ProductCategoryFilter } from '../products/product.types';
 import {
    removeCategoryFilter,
    removePriceRangeFilter,
 } from './active-products-filters-chip-list.actions';
 
 @Component({
-   selector   : 'app-active-products-filters-chip-list',
+   selector   : 'app-products-active-filters-chips',
    standalone : true,
    imports    : [
       CommonModule,
       MatChipsModule,
       MatIconModule
    ],
-   templateUrl: './active-products-filters-chip-list.component.html',
-   styleUrls  : [ './active-products-filters-chip-list.component.scss' ],
+   templateUrl: './products-active-filters-chips.component.html',
+   styleUrls  : [ './products-active-filters-chips.component.scss' ],
 })
-export class ActiveProductsFiltersChipListComponent {
+export class ProductsActiveFiltersChipsComponent {
    private store : Store = inject(Store);
    protected activeCategoryFilters$: Observable<ProductCategoryFilter[]> =
       this.store.select(selectActiveProductsCategoryFilters);

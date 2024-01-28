@@ -9,7 +9,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { Store } from '@ngrx/store';
 import { searchProducts } from './products-search.actions';
 import { debounceTime, first, Subscription } from 'rxjs';
-import { selectProductsQuery } from '../products-state/products-state.selectors';
+import { selectProductsQuery } from '../products/products-state.selectors';
 
 @Component({
    selector: 'app-products-search',

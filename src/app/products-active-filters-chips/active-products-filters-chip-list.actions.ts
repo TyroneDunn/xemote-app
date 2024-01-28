@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductCategory } from '../product/product.types';
+import { ProductCategory } from '../products/product.types';
 
 export const removeCategoryFilter = createAction(
    '[Active Products Filters Chip List] Remove Category Filter',

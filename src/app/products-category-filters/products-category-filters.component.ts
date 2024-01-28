@@ -9,9 +9,9 @@ import { Observable, of, switchMap } from 'rxjs';
 import {
    selectProductsCategoryFilters,
    selectProductsLoading,
-} from '../products-state/products-state.selectors';
+} from '../products/products-state.selectors';
 import { toggleProductsCategoryFilter } from './products-category-filters.actions';
-import { ProductCategory, ProductCategoryFilter } from '../product/product.types';
+import { ProductCategory, ProductCategoryFilter } from '../products/product.types';
 import { Store } from '@ngrx/store';
 
 @Component({

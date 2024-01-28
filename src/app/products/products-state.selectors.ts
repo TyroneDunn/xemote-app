@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { FEATURE_KEY, State } from './products-state.module';
-import { ProductsRequest } from '../product/product.types';
+import { ProductsRequest } from './product.types';
 
 export const selectSharedProductsState = createFeatureSelector<State>(FEATURE_KEY);
 

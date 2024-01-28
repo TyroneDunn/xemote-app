@@ -6,7 +6,7 @@ import {
 } from '@angular/material/slider';
 import { Store } from '@ngrx/store';
 import { updateProductsPriceRangeFilter } from './products-price-range-filter.actions';
-import { selectProductsPriceRangeFilter } from '../products-state/products-state.selectors';
+import { selectProductsPriceRangeFilter } from '../products/products-state.selectors';
 
 @Component({
   selector: 'app-products-price-range-filter',

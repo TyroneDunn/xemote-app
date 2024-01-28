@@ -3,7 +3,7 @@ import { createAction, props } from '@ngrx/store';
 import {
    GetProductsResponse,
    ProductsRequest as GetProductsRequest,
-} from '../product/product.types';
+} from '../products/product.types';
 
 export const loadProductsSuccess = createAction(
    '[Products API] Load Products Success',

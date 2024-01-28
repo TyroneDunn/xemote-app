@@ -7,9 +7,9 @@ import { map, Observable } from 'rxjs';
 import {
    selectProductsLoading,
    selectProductsSort,
-} from '../products-state/products-state.selectors';
+} from '../products/products-state.selectors';
 import { sortProducts } from './products-sort-chips.actions';
-import { ProductsSort } from '../product/product.types';
+import { ProductsSort } from '../products/product.types';
 import { BooleanInput } from '@angular/cdk/coercion';
 
 @Component({

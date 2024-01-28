@@ -79,7 +79,7 @@ export class TestimonialsSection {
       {
          author: 'S Barnes',
          image: 'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fzachonleadership.com%2Fwp-content%2Fuploads%2F2016%2F07%2FHeadshot-square.jpg&f=1&nofb=1&ipt=6513b511a4d1059aebf7b3c663c4151ab30b0c29079fe6076904ea89c973c8b6&ipo=images',
-         message: 'For the years that we are with Xemote, we have never experienced problems that will put our fresh product at risk. It is an utmost pleasure to view all temperature logging on a PC or in the comfort of your own home on your cell phone. The service we have received from Xemote is good, if not perfect, without a doubt. ',
+         message: 'For the years that we are with Xemote, we have never experienced problems that will put our fresh products at risk. It is an utmost pleasure to view all temperature logging on a PC or in the comfort of your own home on your cell phone. The service we have received from Xemote is good, if not perfect, without a doubt. ',
          company: 'In2Food'
       },
       {

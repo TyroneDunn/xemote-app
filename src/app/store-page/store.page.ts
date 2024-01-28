@@ -11,7 +11,7 @@ import { enterStorePage } from './store.page.actions';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { map } from 'rxjs';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
-import { selectProductsLoading } from '../products-state/products-state.selectors';
+import { selectProductsLoading } from '../products/products-state.selectors';
 
 @Component({
   selector: 'app-store-page',

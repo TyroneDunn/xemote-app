@@ -1,7 +1,7 @@
 import { Component, inject, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { combineLatestWith, map, Observable, of } from 'rxjs';
-import { Product } from '../product/product.types';
+import { Product } from '../products/product.types';
 import { ProductCardComponent } from '../product-card/product-card.component';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { Store } from '@ngrx/store';
@@ -11,11 +11,11 @@ import {
    selectProductsLoading,
    selectProductsPage,
    selectProductsQuery,
-} from '../products-state/products-state.selectors';
+} from '../products/products-state.selectors';
 import { ProductsSortMenu } from '../products-sort-menu/products-sort-menu.component';
 import {
-   ActiveProductsFiltersChipListComponent
-} from '../active-products-filters-chip-list/active-products-filters-chip-list.component';
+   ProductsActiveFiltersChipsComponent
+} from '../products-active-filters-chips/products-active-filters-chips.component';
 import { pageProducts } from './products-list.actions';
 
 @Component({
@@ -24,7 +24,7 @@ import { pageProducts } from './products-list.actions';
    imports: [
       CommonModule,
       ProductsSortMenu,
-      ActiveProductsFiltersChipListComponent,
+      ProductsActiveFiltersChipsComponent,
       ProductCardComponent,
       MatPaginatorModule,
    ],

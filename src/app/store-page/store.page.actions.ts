@@ -1,5 +1,5 @@
 import { createAction, props } from '@ngrx/store';
-import { ProductCategory } from '../product/product.types';
+import { ProductCategory } from '../products/product.types';
 import { Page } from '../shared/page.type';
 
 export const enterStorePage = createAction(

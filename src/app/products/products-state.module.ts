@@ -3,7 +3,7 @@ import { ActionReducerMap, StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { ProductsState } from './products-state.type';
 import { productsReducer } from './products-state.reducer';
-import { ProductEffects } from '../product/product.effects';
+import { ProductsEffects } from './products.effects';
 import { ProductsApiEffects } from '../products-api/products-api.effects';
 
 export const FEATURE_KEY: string = 'products';
@@ -20,7 +20,7 @@ export const actionReducerMap: ActionReducerMap<State> = {
   imports: [
      StoreModule.forFeature(FEATURE_KEY, actionReducerMap),
      EffectsModule.forFeature([
-        ProductEffects,
+        ProductsEffects,
         ProductsApiEffects,
      ]),
   ]

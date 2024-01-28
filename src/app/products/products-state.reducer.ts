@@ -1,6 +1,6 @@
 import { ActionReducer, createReducer, on } from '@ngrx/store';
 import { ProductsState } from './products-state.type';
-import { loadProducts } from '../product/product.actions.type';
+import { loadProducts } from './products.actions';
 import { loadProductsSuccess } from '../products-api/products-api.actions';
 
 const initialState: ProductsState = {

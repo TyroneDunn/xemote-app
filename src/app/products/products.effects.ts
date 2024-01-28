@@ -2,9 +2,9 @@ import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { enterStorePage } from '../store-page/store.page.actions';
 import { of, switchMap, withLatestFrom } from 'rxjs';
-import { loadProducts } from './product.actions.type';
+import { loadProducts } from './products.actions';
 import { Store } from '@ngrx/store';
-import { selectProductsQueryParams } from '../products-state/products-state.selectors';
+import { selectProductsQueryParams } from './products-state.selectors';
 import { toggleProductsSort } from '../products-sort-menu/products-sort-menu.actions';
 import { negateOrder } from '../shared/order.utility';
 import { ProductCategory, ProductsRequest } from './product.types';
@@ -18,7 +18,7 @@ import { NumberRange } from '../shared/number-range.type';
 import {
    removeCategoryFilter,
    removePriceRangeFilter,
-} from '../active-products-filters-chip-list/active-products-filters-chip-list.actions';
+} from '../products-active-filters-chips/active-products-filters-chip-list.actions';
 import { pageProducts } from '../products-list/products-list.actions';
 import { Page } from '../shared/page.type';
 import { searchProducts } from '../products-search/products-search.actions';
@@ -27,11 +27,11 @@ import { sortProducts } from '../products-sort-chips/products-sort-chips.actions
 @Injectable({
   providedIn: 'root'
 })
-export class ProductEffects {
+export class ProductsEffects {
    private readonly actions$: Actions = inject(Actions);
    private readonly store: Store = inject(Store);
 
-   private readonly loadProducts = createEffect(() =>
+   private readonly loadProductsOnEnterStorePage = createEffect(() =>
       this.actions$.pipe(
          ofType(enterStorePage),
          withLatestFrom(this.store.select(selectProductsQueryParams)),
