@@ -1,8 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { loadProducts } from '../products/products.actions';
-import { map, switchMap } from 'rxjs';
-import { loadProductsSuccess } from './products-api.actions';
+import { catchError, map, of, switchMap } from 'rxjs';
+import { loadProductsFailure, loadProductsSuccess } from './products-api.actions';
 import { ProductsApiService } from './products-api.service';
 
 @Injectable({
@@ -26,8 +26,8 @@ export class ProductsApiEffects {
                      response: response
                   }),
                ),
-               // todo : implement failure case
-               // catchError()
+               catchError(() =>
+                  of(loadProductsFailure()))
             )),
       ));
 }
