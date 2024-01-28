@@ -47,6 +47,7 @@ export type ProductsSort = {
 };
 
 export type GetProductsResponse = {
+   status: number,
    collection: Product[],
    count: number,
    index: number,
