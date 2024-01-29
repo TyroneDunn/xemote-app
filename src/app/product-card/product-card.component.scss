@@ -1,14 +1,16 @@
 .product-card {
    padding-top: 1rem;
    min-height: 368px;
+   display: flex;
+   flex-direction: column;
+   justify-content: space-between;
 
    .product-image-container {
-      margin-left: auto;
-      margin-right: auto;
+      margin: auto;
 
       .product-image {
          width: 100%;
-         object-fit: cover;
+         height: auto;
       }
    }
 
