@@ -14,9 +14,6 @@
    <mat-toolbar-row *ngIf="isMobile$ | async">
       <div class="store-toolbar-mobile">
          <span class="store-toolbar-search"><app-products-search/></span>
-         <button mat-icon-button>
-            <mat-icon>shopping_cart</mat-icon>
-         </button>
       </div>
    </mat-toolbar-row>
    <mat-toolbar-row *ngIf="isMobile$ | async">
@@ -31,6 +28,9 @@
                <mat-icon>expand_more</mat-icon>
             </button>
          </div>
+         <button mat-icon-button>
+            <mat-icon>shopping_cart</mat-icon>
+         </button>
       </div>
    </mat-toolbar-row>
 </mat-toolbar>
