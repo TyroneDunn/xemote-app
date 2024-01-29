@@ -1,11 +1,9 @@
 .hero-section-container {
-   display: flex;
-   flex-direction: row;
-   max-width: 120rem;
-   gap: 8rem;
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+   gap: 2rem;
    margin: auto;
-   margin-top: 6%;
-   margin-bottom: 1rem;
+   margin-top: 4rem;
 }
 
 .hero-section-content {
@@ -14,9 +12,9 @@
    gap: 2rem;
    text-align: center;
    margin-top: auto;
+   margin-bottom: auto;
 
    .headline {
-      max-width: 80rem;
       margin-left: auto;
       margin-right: auto;
    }
@@ -38,6 +36,11 @@
 .hero-image-container {
    margin-left: auto;
    margin-right: auto;
+}
+
+.hero-image {
+   width: 100%;
+   height: auto;
 }
 
 .hero-image-mobile {
