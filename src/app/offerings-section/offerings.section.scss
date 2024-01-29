@@ -1,12 +1,12 @@
 .offerings-section-container {
    display: flex;
    flex-direction: column;
-   margin-top: 4rem;
-   margin-bottom: 4rem;
+   margin-top: 2rem;
+   margin-bottom: 2rem;
 
    .offerings-section-header {
       display: grid;
-      grid-template-columns: 1fr 2fr;
+      grid-template-columns: 2fr 3fr;
       gap: 2rem;
 
       .offerings-section-header-title {
@@ -19,6 +19,7 @@
 
          .offerings-section-quote {
             margin: auto;
+            text-align: right;
          }
       }
 
