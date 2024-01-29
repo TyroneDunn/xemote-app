@@ -1,7 +1,5 @@
 <div class="footer-section">
-   <!--   <div class="footer-section-content">-->
    <div [ngClass]="(isMobile$ | async)? 'footer-section-content-mobile': 'footer-section-content'">
-      <span></span>
       <div class="footer-section-meta-description">
          <app-home-action/>
          <p class="mat-body-1">
@@ -47,7 +45,6 @@
             </a>
          </div>
       </div>
-      <span></span>
    </div>
    <div class="footer-section-copyright mat-body-1">
       This website is a demo & not for commercial Use | Dunn Atelier | 2024

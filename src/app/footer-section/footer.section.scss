@@ -1,16 +1,16 @@
 .footer-section {
-   width: 100%;
    display: flex;
    flex-direction: column;
-   padding: 3rem;
-   gap: 3rem;
+   margin-left: 10%;
+   margin-right: 10%;
+   margin-bottom: 1rem;
 
    .footer-section-content {
+      width: 100%;
       margin-left: auto;
       margin-right: auto;
       display: grid;
-      grid-template-columns: 1fr 2fr 2fr 1fr;
-      margin-bottom: 2rem;
+      grid-template-columns: 1fr 1fr;
    }
 
    .footer-section-content-mobile {
